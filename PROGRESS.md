@@ -1,10 +1,10 @@
 # EduTech B2B - Progress
 
-## Status: LAUNCH PACKAGE COMPLETE
-## Last Updated: 2026-02-08
+## Status: WEBSITE DEPLOYED
+## Last Updated: 2026-02-13
 
 ## Current State
-Full launch package for MoreTech (מורה טק) completed. 5 deliverables produced by a parallel team of 4 agents. Ready for market entry.
+Full launch package for MoreTech completed and website deployed to GitHub Pages. All deliverables verified complete. Ready for market entry.
 
 ## What Was Done
 - [x] Initial market mapping - 5 customer segments identified
@@ -19,6 +19,10 @@ Full launch package for MoreTech (מורה טק) completed. 5 deliverables produ
 - [x] Email Outreach Templates - 5 templates + timeline (see outreach/emails.md)
 - [x] Competitive Analysis - 13 competitors + SWOT (see competitive-analysis.md)
 - [x] Business Plan - 10 sections + financials (see business-plan/plan.md)
+- [x] GitHub repo created (github.com/eladjak/moretech)
+- [x] Website deployed to GitHub Pages (https://eladjak.github.io/moretech/)
+- [x] GitHub Actions CI/CD workflow for automatic deployment on push
+- [x] Next.js configured for static export (output: 'export', basePath: '/moretech')
 
 ## Key Decisions Made
 1. **Target segment**: Private education networks (ORT, AMIT, Atid, Amal, Darca, Mofet)
@@ -50,16 +54,25 @@ Full launch package for MoreTech (מורה טק) completed. 5 deliverables produ
 | outreach/emails.md | 5 email templates + outreach timeline |
 | competitive-analysis.md | 13 competitors + SWOT + positioning |
 | business-plan/plan.md | 10-section business plan + financials |
+| .github/workflows/deploy.yml | GitHub Actions CI/CD for Pages deployment |
+
+## Deployment Info
+- **GitHub Repo**: https://github.com/eladjak/moretech
+- **Live Website**: https://eladjak.github.io/moretech/
+- **CI/CD**: GitHub Actions auto-deploys on push to `main`
+- **Custom Domain**: When moretech.co.il is ready, update `basePath` in next.config.ts and add CNAME
 
 ## Next Steps
 1. Review all deliverables and refine messaging
-2. Set up domain (moretech.co.il) and deploy website to Vercel
-3. Create WhatsApp outreach messages (whatsapp skill)
-4. Identify specific contacts at AMIT and ORT networks
-5. Send first outreach emails
-6. Schedule pilot workshops
-7. Build one-pager PDF (html-to-pdf skill)
-8. Set up CRM tracking for outreach
+2. ~~Set up domain (moretech.co.il) and deploy website to Vercel~~ -- Deployed to GitHub Pages
+3. Purchase moretech.co.il domain and configure custom domain in GitHub Pages
+4. Update contact info in Contact.tsx (replace placeholder phone +972-XX-XXX-XXXX)
+5. Create WhatsApp outreach messages (whatsapp skill)
+6. Identify specific contacts at AMIT and ORT networks
+7. Send first outreach emails
+8. Schedule pilot workshops
+9. Build one-pager PDF (html-to-pdf skill)
+10. Set up CRM tracking for outreach
 
 ## Smart Tools Workflow
 - **Research**: WebSearch + dispatching-parallel-agents

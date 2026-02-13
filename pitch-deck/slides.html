@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מורה טק - Pitch Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      direction: rtl;
+      background: #f0f0f0;
+    }
+
+    section.slide {
+      width: 1280px;
+      height: 720px;
+      position: relative;
+      overflow: hidden;
+      background: #ffffff;
+      page-break-after: always;
+      margin: 0 auto 20px;
+    }
+
+    /* ===== SLIDE 1: TITLE ===== */
+    .slide-title {
+      background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 60%, #3182ce 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .slide-title .logo-text {
+      font-size: 96px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      margin-bottom: 8px;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .slide-title .tagline {
+      font-size: 36px;
+      font-weight: 300;
+      margin-bottom: 40px;
+      opacity: 0.95;
+    }
+
+    .slide-title .subtitle {
+      font-size: 22px;
+      font-weight: 400;
+      background: rgba(255,255,255,0.15);
+      padding: 12px 40px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .slide-title .accent-line {
+      width: 120px;
+      height: 4px;
+      background: #38a169;
+      margin: 20px auto;
+      border-radius: 2px;
+    }
+
+    /* ===== SLIDE 2: CRISIS ===== */
+    .slide-crisis {
+      padding: 60px 80px;
+      background: #ffffff;
+    }
+
+    .slide-crisis h2 {
+      font-size: 42px;
+      font-weight: 900;
+      color: #1a365d;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .crisis-stats {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      margin-bottom: 50px;
+    }
+
+    .crisis-stat {
+      text-align: center;
+    }
+
+    .crisis-stat .number {
+      font-size: 96px;
+      font-weight: 900;
+      color: #c53030;
+      line-height: 1;
+    }
+
+    .crisis-stat .arrow {
+      font-size: 48px;
+      color: #c53030;
+      margin: 8px 0;
+    }
+
+    .crisis-stat .label {
+      font-size: 20px;
+      color: #4a5568;
+      font-weight: 400;
+      max-width: 280px;
+    }
+
+    .crisis-bar {
+      background: #fed7d7;
+      border-radius: 12px;
+      padding: 24px 40px;
+      text-align: center;
+      font-size: 22px;
+      color: #c53030;
+      font-weight: 700;
+      border: 2px solid #feb2b2;
+    }
+
+    /* ===== SLIDE 3: GOVERNMENT ===== */
+    .slide-government {
+      padding: 50px 80px;
+      background: linear-gradient(180deg, #ffffff 0%, #ebf4ff 100%);
+    }
+
+    .slide-government h2 {
+      font-size: 40px;
+      font-weight: 900;
+      color: #1a365d;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .slide-government .program-name {
+      text-align: center;
+      font-size: 28px;
+      color: #2b6cb0;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+
+    .gov-stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-bottom: 40px;
+    }
+
+    .gov-stat {
+      background: white;
+      border-radius: 16px;
+      padding: 30px 36px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 1px solid #e2e8f0;
+      min-width: 220px;
+    }
+
+    .gov-stat .value {
+      font-size: 36px;
+      font-weight: 900;
+      color: #2b6cb0;
+      margin-bottom: 8px;
+    }
+
+    .gov-stat .desc {
+      font-size: 16px;
+      color: #4a5568;
+    }
+
+    .gov-warning {
+      background: #fffbeb;
+      border: 2px solid #f6e05e;
+      border-radius: 12px;
+      padding: 20px 32px;
+      text-align: center;
+      font-size: 22px;
+      color: #975a16;
+      font-weight: 700;
+    }
+
+    .gov-warning span {
+      color: #c53030;
+    }
+
+    /* ===== SLIDE 4: GAP ===== */
+    .slide-gap {
+      padding: 50px 80px;
+      background: #ffffff;
+    }
+
+    .slide-gap h2 {
+      font-size: 40px;
+      font-weight: 900;
+      color: #1a365d;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .gap-comparison {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .gap-side {
+      flex: 1;
+      max-width: 440px;
+      border-radius: 16px;
+      padding: 32px;
+    }
+
+    .gap-side.promise {
+      background: #ebf8ff;
+      border: 2px solid #bee3f8;
+    }
+
+    .gap-side.reality {
+      background: #fff5f5;
+      border: 2px solid #feb2b2;
+    }
+
+    .gap-side h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .gap-side.promise h3 {
+      color: #2b6cb0;
+    }
+
+    .gap-side.reality h3 {
+      color: #c53030;
+    }
+
+    .gap-side ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .gap-side ul li {
+      font-size: 18px;
+      padding: 8px 0;
+      color: #4a5568;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .gap-side ul li:last-child {
+      border-bottom: none;
+    }
+
+    .gap-cta {
+      background: linear-gradient(135deg, #1a365d, #2b6cb0);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    /* ===== SLIDE 5: SOLUTION ===== */
+    .slide-solution {
+      padding: 50px 60px;
+      background: linear-gradient(180deg, #1a365d 0%, #2b6cb0 100%);
+      color: white;
+    }
+
+    .slide-solution h2 {
+      font-size: 42px;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .slide-solution .solution-sub {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 300;
+      opacity: 0.9;
+      margin-bottom: 50px;
+    }
+
+    .pillars {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .pillar {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      flex: 1;
+      max-width: 260px;
+    }
+
+    .pillar .pillar-icon {
+      font-size: 56px;
+      margin-bottom: 16px;
+    }
+
+    .pillar h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .pillar p {
+      font-size: 16px;
+      opacity: 0.85;
+      font-weight: 300;
+    }
+
+    /* ===== SLIDE 6: HOW IT WORKS ===== */
+    .slide-process {
+      padding: 50px 60px;
+      background: #ffffff;
+    }
+
+    .slide-process h2 {
+      font-size: 40px;
+      font-weight: 900;
+      color: #1a365d;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .timeline {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 16px;
+      position: relative;
+    }
+
+    .timeline-item {
+      text-align: center;
+      flex: 1;
+      max-width: 240px;
+      position: relative;
+    }
+
+    .timeline-item .phase-circle {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2b6cb0, #3182ce);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .timeline-item h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a365d;
+      margin-bottom: 8px;
+    }
+
+    .timeline-item p {
+      font-size: 15px;
+      color: #718096;
+    }
+
+    .timeline-arrow {
+      font-size: 32px;
+      color: #cbd5e0;
+      margin-top: 24px;
+    }
+
+    /* ===== SLIDE 7: AI ===== */
+    .slide-ai {
+      padding: 50px 80px;
+      background: linear-gradient(135deg, #f0fff4 0%, #ebf8ff 100%);
+    }
+
+    .slide-ai h2 {
+      font-size: 42px;
+      font-weight: 900;
+      color: #1a365d;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .slide-ai .ai-sub {
+      text-align: center;
+      font-size: 22px;
+      color: #38a169;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+
+    .ai-features {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 36px;
+    }
+
+    .ai-feature {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+      flex: 1;
+      max-width: 300px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      border: 1px solid #e2e8f0;
+    }
+
+    .ai-feature .ai-icon {
+      font-size: 44px;
+      margin-bottom: 12px;
+    }
+
+    .ai-feature h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a365d;
+      margin-bottom: 8px;
+    }
+
+    .ai-feature p {
+      font-size: 15px;
+      color: #718096;
+    }
+
+    .ai-bottom {
+      background: #38a169;
+      color: white;
+      text-align: center;
+      padding: 16px;
+      border-radius: 10px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    /* ===== SLIDE 8: NETWORKS ===== */
+    .slide-networks {
+      padding: 50px 60px;
+      background: #ffffff;
+    }
+
+    .slide-networks h2 {
+      font-size: 40px;
+      font-weight: 900;
+      color: #1a365d;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .slide-networks .net-sub {
+      font-size: 22px;
+      color: #2b6cb0;
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .networks-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+
+    .networks-table th {
+      background: #1a365d;
+      color: white;
+      padding: 12px 16px;
+      text-align: right;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .networks-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid #e2e8f0;
+      color: #4a5568;
+      text-align: right;
+    }
+
+    .networks-table tr:nth-child(even) {
+      background: #f7fafc;
+    }
+
+    .net-total {
+      background: linear-gradient(135deg, #1a365d, #2b6cb0);
+      color: white;
+      text-align: center;
+      padding: 16px;
+      border-radius: 10px;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    /* ===== SLIDE 9: PRICING ===== */
+    .slide-pricing {
+      padding: 50px 60px;
+      background: linear-gradient(180deg, #f7fafc 0%, #edf2f7 100%);
+    }
+
+    .slide-pricing h2 {
+      font-size: 40px;
+      font-weight: 900;
+      color: #1a365d;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .pricing-tiers {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+
+    .pricing-tier {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: center;
+      flex: 1;
+      max-width: 300px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 2px solid #e2e8f0;
+      position: relative;
+    }
+
+    .pricing-tier.recommended {
+      border-color: #38a169;
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(56,161,105,0.15);
+    }
+
+    .pricing-tier.recommended .badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #38a169;
+      color: white;
+      padding: 4px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .pricing-tier h3 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1a365d;
+      margin-bottom: 8px;
+    }
+
+    .pricing-tier .price {
+      font-size: 44px;
+      font-weight: 900;
+      color: #2b6cb0;
+      margin-bottom: 4px;
+    }
+
+    .pricing-tier .price-unit {
+      font-size: 14px;
+      color: #a0aec0;
+      margin-bottom: 16px;
+    }
+
+    .pricing-tier ul {
+      list-style: none;
+      padding: 0;
+      text-align: right;
+    }
+
+    .pricing-tier ul li {
+      font-size: 14px;
+      padding: 6px 0;
+      color: #4a5568;
+      border-bottom: 1px solid #f7fafc;
+    }
+
+    .pricing-example {
+      background: #1a365d;
+      color: white;
+      text-align: center;
+      padding: 16px;
+      border-radius: 10px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .pricing-example span {
+      color: #68d391;
+    }
+
+    /* ===== SLIDE 10: COMPETITIVE ===== */
+    .slide-competitive {
+      padding: 50px 80px;
+      background: #ffffff;
+    }
+
+    .slide-competitive h2 {
+      font-size: 42px;
+      font-weight: 900;
+      color: #1a365d;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    .comparison-table th {
+      padding: 16px 24px;
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .comparison-table th:first-child {
+      text-align: right;
+    }
+
+    .comparison-table th.competitors {
+      background: #fed7d7;
+      color: #c53030;
+      border-radius: 12px 12px 0 0;
+    }
+
+    .comparison-table th.us {
+      background: #c6f6d5;
+      color: #276749;
+      border-radius: 12px 12px 0 0;
+    }
+
+    .comparison-table td {
+      padding: 14px 24px;
+      font-size: 18px;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: middle;
+    }
+
+    .comparison-table td:nth-child(2) {
+      text-align: center;
+      color: #c53030;
+      background: #fff5f5;
+    }
+
+    .comparison-table td:nth-child(3) {
+      text-align: center;
+      color: #276749;
+      background: #f0fff4;
+      font-weight: 700;
+    }
+
+    .competitive-bottom {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      color: #1a365d;
+    }
+
+    /* ===== SLIDE 11: ROADMAP ===== */
+    .slide-roadmap {
+      padding: 50px 80px;
+      background: linear-gradient(180deg, #1a365d 0%, #2b6cb0 100%);
+      color: white;
+    }
+
+    .slide-roadmap h2 {
+      font-size: 42px;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .roadmap-items {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .roadmap-item {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 14px;
+      padding: 20px 28px;
+    }
+
+    .roadmap-item .rm-date {
+      font-size: 20px;
+      font-weight: 900;
+      min-width: 160px;
+      text-align: center;
+      background: rgba(255,255,255,0.15);
+      padding: 10px 16px;
+      border-radius: 8px;
+    }
+
+    .roadmap-item .rm-text {
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    .roadmap-item .rm-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #38a169;
+      flex-shrink: 0;
+    }
+
+    /* ===== SLIDE 12: CTA ===== */
+    .slide-cta {
+      background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 50%, #38a169 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .slide-cta h2 {
+      font-size: 60px;
+      font-weight: 900;
+      margin-bottom: 24px;
+    }
+
+    .slide-cta .cta-offer {
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 40px;
+      opacity: 0.95;
+    }
+
+    .slide-cta .cta-box {
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 16px;
+      padding: 28px 48px;
+      margin-bottom: 36px;
+    }
+
+    .slide-cta .cta-box p {
+      font-size: 22px;
+      margin: 8px 0;
+    }
+
+    .slide-cta .cta-join {
+      font-size: 32px;
+      font-weight: 900;
+      background: #38a169;
+      padding: 14px 48px;
+      border-radius: 50px;
+      display: inline-block;
+    }
+
+    /* Footer across slides (optional subtle branding) */
+    .slide-footer {
+      position: absolute;
+      bottom: 16px;
+      left: 40px;
+      right: 40px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #a0aec0;
+    }
+
+    .slide-footer.light {
+      color: rgba(255,255,255,0.4);
+    }
+  </style>
+</head>
+<body>
+
+<!-- SLIDE 1: TITLE -->
+<section class="slide slide-title">
+  <div class="logo-text">מורה טק</div>
+  <div class="accent-line"></div>
+  <div class="tagline">הופכים מורים למורי טכנולוגיה</div>
+  <div class="subtitle">פתרון B2B מלא לרשתות חינוך</div>
+  <div class="slide-footer light">
+    <span>מורה טק</span>
+    <span>2026</span>
+  </div>
+</section>
+
+<!-- SLIDE 2: THE CRISIS -->
+<section class="slide slide-crisis">
+  <h2>משבר המורים הטכנולוגיים</h2>
+  <div class="crisis-stats">
+    <div class="crisis-stat">
+      <div class="number">22%</div>
+      <div class="arrow">&#9660;</div>
+      <div class="label">ירידה במורים חדשים הנכנסים למערכת החינוך</div>
+    </div>
+    <div class="crisis-stat">
+      <div class="number">40%</div>
+      <div class="arrow">&#9660;</div>
+      <div class="label">ירידה בסטודנטים למדעי המחשב באוניברסיטאות</div>
+    </div>
+  </div>
+  <div class="crisis-bar">
+    בתי הספר שלכם לא יוכלו ללמד טכנולוגיה - אם לא נפעל עכשיו
+  </div>
+  <div class="slide-footer">
+    <span>מורה טק</span>
+    <span>2 / 12</span>
+  </div>
+</section>
+
+<!-- SLIDE 3: GOVERNMENT PROMISE -->
+<section class="slide slide-government">
+  <h2>ההזדמנות הממשלתית</h2>
+  <div class="program-name">תכנית "ישראל ריאלית" | 2025-2028</div>
+  <div class="gov-stats">
+    <div class="gov-stat">
+      <div class="value">1.485</div>
+      <div class="desc">מיליארד ש"ח תקציב</div>
+    </div>
+    <div class="gov-stat">
+      <div class="value">70,000</div>
+      <div class="desc">מורים צריכים הכשרת AI</div>
+    </div>
+    <div class="gov-stat">
+      <div class="value">2025</div>
+      <div class="desc">"שנת הבינה המלאכותית"</div>
+    </div>
+  </div>
+  <div class="gov-warning">
+    אבל: <span>פערי ביצוע ענקיים</span> - מיליונים ירדו לטמיון ללא שותף ביצועי
+  </div>
+  <div class="slide-footer">
+    <span>מורה טק</span>
+    <span>3 / 12</span>
+  </div>
+</section>
+
+<!-- SLIDE 4: THE GAP -->
+<section class="slide slide-gap">
+  <h2>הפער: בין ההכרזות לכיתה</h2>
+  <div class="gap-comparison">
+    <div class="gap-side promise">
+      <h3>ההבטחה</h3>
+      <ul>
+        <li>&#10004; תקציבים של מיליארדים</li>
+        <li>&#10004; תכניות לאומיות</li>
+        <li>&#10004; הכרזות ראש ממשלה</li>
+        <li>&#10004; "מהפכת ה-AI בחינוך"</li>
+      </ul>
+    </div>
+    <div class="gap-side reality">
+      <h3>המציאות בכיתה</h3>
+      <ul>
+        <li>&#10008; מורים לא מוכנים</li>
+        <li>&#10008; חוסר ידע טכנולוגי</li>
+        <li>&#10008; אין מערכי שיעור</li>
+        <li>&#10008; אין ליווי מקצועי</li>
+      </ul>
+    </div>
+  </div>
+  <div class="gap-cta">
+    כאן אנחנו נכנסים - הזרוע הביצועית של רשתות החינוך
+  </div>
+  <div class="slide-footer">
+    <span>מורה טק</span>
+    <span>4 / 12</span>
+  </div>
+</section>
+
+<!-- SLIDE 5: OUR SOLUTION -->
+<section class="slide slide-solution">
+  <h2>מורה טק - חבילה שלמה</h2>
+  <div class="solution-sub">הכל כלול. בלי הפתעות. תוצאות מדידות.</div>
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-icon">&#127891;</div>
+      <h3>הכשרת מורים</h3>
+      <p>80 שעות הכשרה בשנה. תכנות, AI, חשיבה חישובית.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">&#128218;</div>
+      <h3>תכניות לימודים</h3>
+      <p>30 מערכי שיעור מוכנים. מותאמים לתכנית הלימודים.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">&#129309;</div>
+      <h3>ליווי חודשי</h3>
+      <p>מנטורינג אישי. פגישות צוות. תמיכה שוטפת.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">&#128202;</div>
+      <h3>דאשבורד ניהולי</h3>
+      <p>מדידת התקדמות. דוחות לרשת. שקיפות מלאה.</p>
+    </div>
+  </div>
+  <div class="slide-footer light">
+    <span>מורה טק</span>
+    <span>5 / 12</span>
+  </div>
+</section>
+
+<!-- SLIDE 6: HOW IT WORKS -->
+<section class="slide slide-process">
+  <h2>איך זה עובד?</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="phase-circle">חודש<br>1-2</div>
+      <h3>אבחון והתאמה</h3>
+      <p>מיפוי מורים, זיהוי צרכים, בניית תכנית מותאמת</p>
+    </div>
+    <div class="timeline-arrow">&#8592;</div>
+    <div class="timeline-item">
+      <div class="phase-circle">חודש<br>3-8</div>
+      <h3>הכשרה + יישום</h3>
+      <p>סדנאות, תרגול בכיתות, ליווי צמוד</p>
+    </div>
+    <div class="timeline-arrow">&#8592;</div>
+    <div class="timeline-item">
+      <div class="phase-circle">חודש<br>9-12</div>
+      <h3>העמקה + מדידה</h3>
+      <p>מדידת תוצאות, דוחות הנהלה, שיפור מתמיד</p>
+    </div>
+    <div class="timeline-arrow">&#8592;</div>
+    <div class="timeline-item">
+      <div class="phase-circle">שנה<br>2+</div>
+      <h3>חידוש + הרחבה</h3>
+      <p>הרחבת תחומים, מורים נוספים, תכנים חדשים</p>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>מורה טק</span>
+    <span>6 / 12</span>
+  </div>
+</section>
+
+<!-- SLIDE 7: AI TRAINING -->
+<section class="slide slide-ai">
+  <h2>הכשרת AI למורים</h2>
+  <div class="ai-sub">70,000 מורים צריכים הכשרה - הזדמנות ענקית</div>
+  <div class="ai-features">
+    <div class="ai-feature">
+      <div class="ai-icon">&#129302;</div>
+      <h3>כלים מאושרים</h3>
+      <p>בינה, Google Chat מותאם, Minecraft Education - כלים שמשרד החינוך אישר</p>
+    </div>
+    <div class="ai-feature">
+      <div class="ai-icon">&#128187;</div>
+      <h3>יישום בכיתה</h3>
+      <p>לא רק תיאוריה - תרגול מעשי בשיעורים אמיתיים</p>
+    </div>
+    <div class="ai-feature">
+      <div class="ai-icon">&#128200;</div>
+      <h3>מדידת אפקטיביות</h3>
+      <p>מעקב אחרי שימוש, שביעות רצון ותוצאות למידה</p>
+    </div>
+  </div>
+  <div class="ai-bottom">אנחנו מכשירים מורים להשתמש ב-AI בכיתה - לא רק ללמד עליו</div>
+  <div class="slide-footer">
+    <span>מורה טק</span>
+    <span>7 / 12</span>
+  </div>
+</section>
+
+<!-- SLIDE 8: EDUCATION NETWORKS -->
+<section class="slide slide-networks">
+  <h2>למה רשתות חינוך?</h2>
+  <div class="net-sub">החלטה אחת = עשרות בתי ספר</div>
+  <table class="networks-table">
+    <thead>
+      <tr>
+        <th>רשת</th>
+        <th>מוסדות</th>
+        <th>תלמידים</th>
+        <th>פוטנציאל</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>אורט ישראל</td>
+        <td>119 בתי ספר</td>
+        <td>77,000</td>
+        <td>גבוה - רשת טכנולוגית</td>
+      </tr>
+      <tr>
+        <td>אמי"ת</td>
+        <td>75-98 מוסדות</td>
+        <td>40,000+</td>
+        <td>גבוה</td>
+      </tr>
+      <tr>
+        <td>עתיד</td>
+        <td>48 בתי ספר</td>
+        <td>25,000+</td>
+        <td>גבוה</td>
+      </tr>
+      <tr>
+        <td>עמל + מופת</td>
+        <td>47 + 160 מוסדות</td>
+        <td>45,000+</td>
+        <td>גבוה מאוד</td>
+      </tr>
+      <tr>
+        <td>דרכא</td>
+        <td>41 בתי ספר</td>
+        <td>20,000+</td>
+        <td>בינוני-גבוה</td>
+      </tr>
+      <tr>
+        <td>בני עקיבא</td>
+        <td>52 מוסדות</td>
+        <td>18,000+</td>
+        <td>בינוני</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="net-total">סה"כ: 300+ תיכונים | 200,000+ תלמידים | 7 החלטות מפתח</div>
+  <div class="slide-footer">
+    <span>מורה טק</span>
+    <span>8 / 12</span>
+  </div>
+</section>
+
+<!-- SLIDE 9: PRICING -->
+<section class="slide slide-pricing">
+  <h2>מסלולי תמחור</h2>
+  <div class="pricing-tiers">
+    <div class="pricing-tier">
+      <h3>בסיסי</h3>
+      <div class="price">8,000</div>
+      <div class="price-unit">ש"ח / מורה / שנה</div>
+      <ul>
+        <li>&#10004; 40 שעות הכשרה</li>
+        <li>&#10004; 15 מערכי שיעור</li>
+        <li>&#10004; תמיכה במייל</li>
+        <li>&#10008; ללא מנטורינג</li>
+        <li>&#10008; ללא דאשבורד</li>
+      </ul>
+    </div>
+    <div class="pricing-tier recommended">
+      <div class="badge">מומלץ</div>
+      <h3>מקצועי</h3>
+      <div class="price">15,000</div>
+      <div class="price-unit">ש"ח / מורה / שנה</div>
+      <ul>
+        <li>&#10004; 80 שעות הכשרה</li>
+        <li>&#10004; 30 מערכי שיעור</li>
+        <li>&#10004; מנטורינג חודשי</li>
+        <li>&#10004; דאשבורד ניהולי</li>
+        <li>&#10004; הכשרת AI</li>
+      </ul>
+    </div>
+    <div class="pricing-tier">
+      <h3>פרימיום</h3>
+      <div class="price">22,000</div>
+      <div class="price-unit">ש"ח / מורה / שנה</div>
+      <ul>
+        <li>&#10004; 120 שעות הכשרה</li>
+        <li>&#10004; 50 מערכי שיעור</li>
+        <li>&#10004; מנטור אישי צמוד</li>
+        <li>&#10004; דאשבורד מתקדם</li>
+        <li>&#10004; התאמה מלאה לרשת</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pricing-example">
+    רשת עם 90 מורים במסלול מקצועי = <span>1.35 מיליון ש"ח / שנה</span>
+  </div>
+  <div class="slide-footer">
+    <span>מורה טק</span>
+    <span>9 / 12</span>
+  </div>
+</section>
+
+<!-- SLIDE 10: COMPETITIVE ADVANTAGE -->
+<section class="slide slide-competitive">
+  <h2>למה מורה טק?</h2>
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="competitors">המתחרים</th>
+        <th class="us">מורה טק</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>מיקוד</td>
+        <td>פלטפורמות לתלמידים</td>
+        <td>&#10004; הכשרת מורים</td>
+      </tr>
+      <tr>
+        <td>ליווי</td>
+        <td>ללא ליווי מקצועי</td>
+        <td>&#10004; ליווי שנתי צמוד</td>
+      </tr>
+      <tr>
+        <td>תוכן</td>
+        <td>תוכן לא מעודכן</td>
+        <td>&#10004; עדכון שוטף + AI</td>
+      </tr>
+      <tr>
+        <td>מדידה</td>
+        <td>ללא מדידת תוצאות</td>
+        <td>&#10004; דאשבורד ניהולי</td>
+      </tr>
+      <tr>
+        <td>מודל</td>
+        <td>B2C - מוכרים לתלמידים</td>
+        <td>&#10004; B2B - שותפים לרשת</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="competitive-bottom">
+    "אנחנו היחידים שמתמקדים במורים - כי אם המורה לא יודע, התלמיד לא ילמד"
+  </div>
+  <div class="slide-footer">
+    <span>מורה טק</span>
+    <span>10 / 12</span>
+  </div>
+</section>
+
+<!-- SLIDE 11: ROADMAP -->
+<section class="slide slide-roadmap">
+  <h2>מפת דרכים</h2>
+  <div class="roadmap-items">
+    <div class="roadmap-item">
+      <div class="rm-dot"></div>
+      <div class="rm-date">Q2 2026</div>
+      <div class="rm-text">פיילוט עם 2 רשתות חינוך - 30 מורים</div>
+    </div>
+    <div class="roadmap-item">
+      <div class="rm-dot"></div>
+      <div class="rm-date">Q3-Q4 2026</div>
+      <div class="rm-text">הרחבה ל-4 רשתות - 120 מורים</div>
+    </div>
+    <div class="roadmap-item">
+      <div class="rm-dot"></div>
+      <div class="rm-date">2027</div>
+      <div class="rm-text">כל 7 הרשתות + רשויות מקומיות - 500 מורים</div>
+    </div>
+    <div class="roadmap-item">
+      <div class="rm-dot"></div>
+      <div class="rm-date">2028</div>
+      <div class="rm-text">פלטפורמה דיגיטלית + סקייל ארצי - 2,000+ מורים</div>
+    </div>
+  </div>
+  <div class="slide-footer light">
+    <span>מורה טק</span>
+    <span>11 / 12</span>
+  </div>
+</section>
+
+<!-- SLIDE 12: CALL TO ACTION -->
+<section class="slide slide-cta">
+  <h2>בואו נדבר</h2>
+  <div class="cta-offer">פגישת הכרות + סדנה חינמית ל-5 מורים מהרשת שלכם</div>
+  <div class="cta-box">
+    <p>&#128222; טלפון: 050-XXX-XXXX</p>
+    <p>&#128231; info@moretech.co.il</p>
+    <p>&#127760; www.moretech.co.il</p>
+  </div>
+  <div class="cta-join">הצטרפו למהפכה</div>
+  <div class="slide-footer light">
+    <span>מורה טק</span>
+    <span>12 / 12</span>
+  </div>
+</section>
+
+</body>
+</html>

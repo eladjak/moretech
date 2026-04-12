@@ -1,3 +1,11 @@
+<div align="center">
+
+⭐ If you find this project useful, please star it! ⭐
+
+[🇮🇱 עברית](README.he.md)
+
+</div>
+
 # MoreTech
 
 MoreTech is a B2B EdTech company focused on training existing teachers to become technology and computer science educators. The project includes a marketing website, pitch deck, business plan, and outreach materials.

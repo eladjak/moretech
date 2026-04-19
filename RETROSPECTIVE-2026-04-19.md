@@ -3,79 +3,74 @@
 **Date parked:** 2026-04-19 (Sprint 6.5)
 **Quote from Elad:** *"לקחנו את הפרויקט למקום אחר לחלוטין ממה שחשבתי שיהיה במקור ומאז לא מצאתי את עצמי שם ולכן עזבתי אותו"*
 
+**Correction (2026-04-19 08:20):** *"זה גם לא היה ייעוץ לרשתות חינוך אלא סדרה של קורסים וחוגים שאני יכול ורוצה לספק להן."*
+
 ---
 
-## The two visions
+## The TRUE V1 — Courses & Workshops (not consulting)
 
-### V1 — Original (January–February 2026)
-**B2B consulting for educational networks**
-- Teacher training in technology, AI, programming
-- Curriculum consulting for schools
-- Learning platform services to networks (MoreTech brand)
-- Sales-led, high-touch, relationship-driven
-- Elad's role: strategist + consultant
-- Felt: *his own*
+Elad's actual original vision, now properly captured:
 
-Artifacts:
-- `RESEARCH.md` · market + 5 segments + pain
-- `competitive-analysis.md` · 13 competitors
-- `business-plan/` · 10-section plan
-- `pitch-deck/` · 12-slide deck
-- `website/` · MoreTech landing page (GitHub Pages)
-- `outreach/` · 5 email templates
-- `business-docs/`
+**A provider of delivered courses and workshops to educational networks.**
+- Not consulting ("we advise you how to teach tech")
+- Not SaaS ("use our AI tool")
+- Content-as-a-service: **Elad + team show up, teach, deliver value, leave.** Network pays per course / per workshop / per season.
 
-### V2 — Post-pivot (March 2026)
-**SaaS platform with AI tools for teachers**
-- Lesson planner AI (streaming, Claude+Gemini)
-- Coming: 4 more AI tools
-- Hebrew RTL, Supabase auth, Next.js 16 + React 19 + shadcn/ui
-- Beta signup for 50 first teachers
-- Product-led, scalable, tech-heavy
-- Elad's role: founder + builder
-- Felt: *chasing the market*
+**Evidence in `business-docs/` folder:**
+- `סדנת כתיבה יצירתית עם ChatGPT/` — creative writing workshop with ChatGPT
+- `עבודה על חוויה סדנת AI בסיסית - מבוא לבינה מלאכותית/` — AI intro workshop
+- `הייטקידס/` — HiTechKids (tech courses for kids, existing brand)
+- `סדנת כתיבה יצירתית עם ChatGPT.docx` + `EduTech חוויות ותמחור.xlsx` — pricing matrix, experience catalog
 
-Artifacts:
-- `platform/` · working Next.js app with lesson-planner at `/tools/lesson-planner`
-- `STRATEGIC-PLAN-2026.md` · the pivot plan (output of 6 parallel research agents)
-- `pitch-deck/edutech-pitch-2026.html` · new 12-slide deck
-- `outreach/mindcet-email.md` · MindCET accelerator outreach
-- `outreach/ai-sandbox-application.md` · AI Sandbox program application
-- `outreach/beta-recruitment-strategy.md` · beta teacher plan
-- `dashboard.html` · internal dashboard
+**What Elad already has that validates this:**
+- HiTechKids brand with logos + photos
+- 2 developed workshop curricula (AI intro, ChatGPT creative writing)
+- Pricing table ready
+- Real audience (school networks, community centers)
+- His personal capability to teach (he is the product for V1)
 
-## What went right
-- Both phases were executed end-to-end with real artifacts, not slides.
-- The Strategic Reset in March was intellectually rigorous — 6 parallel research agents, 11 specs, Israeli EdTech market ($1.2B, 506 startups).
-- The V2 platform actually ran and built — not vaporware.
-- Outreach was drafted for real next steps (MindCET, AI Sandbox, beta recruitment).
+## The pivot that went wrong
 
-## What went wrong
-- The pivot was *strategically* defensible but *emotionally* misaligned.
-- Research-agent conclusions are probabilistic, not purpose-aligned. They optimize for "what would succeed" — not "what Elad wants to wake up and build."
-- Once V2 took over, Elad became a product-founder-builder in a crowded SaaS market, not the consultant-strategist who had real market-specific insight.
-- The 506-startup Israeli EdTech scene is terrifying to enter as a product — but far more open to enter as a consultant who can work *with* some of them.
+The Strategic Reset in March produced a plan that was **defensibly good but spiritually wrong**:
+- It chased Israeli EdTech SaaS market (506 startups → platform play)
+- It treated Elad as a **founder-builder** chasing product-market fit
+- It ignored that Elad already had product-market fit in V1: workshops that people will pay for, because he can deliver them personally
 
-## Lesson for future projects
-When a Strategic Reset output looks inevitable — pause and ask:
-1. *Does the new plan feel like mine, or like the market's?*
-2. *Can I be excited to work on this for 3 years?*
-3. *Does this use the insight I actually have, or override it with generic "best practice"?*
+**V2 (SaaS platform) was a response to "how do we scale?" but the right question was "what's working that we can do more of?"**
 
-If answer to any of these is no — write the plan anyway (it has value as research), but don't build from it. **The feedback from the gut is data, not noise.**
+## What went right (from V1 perspective)
+- Built a real demo site (MoreTech website) — could be rebranded for course catalog
+- Hebrew RTL + pitch deck + competitive analysis — reusable assets for course-marketing
+- Outreach templates — can be retargeted from "platform beta" to "workshop booking"
 
-Running 6 research agents produces a defensible plan but not necessarily *your* plan. Consider running a 7th agent whose only job is to stress-test alignment with founder's existing conviction.
+## What went wrong (from V1 perspective)
+- The "strategic reset" moved away from a known-working model toward an unknown-maybe-bigger one
+- Once you became a product-founder, your unique delivery ability (teaching, presence, warmth) stopped being the product
+- The platform V2 required scale, funding, beta teachers — Elad doesn't need any of those to book workshops tomorrow
 
-## What to do with the artifacts
-- **Keep everything.** MoreTech consulting vision (V1) is still valid — the research shows teacher shortage pain is real. If you return to it, you'd start with half the work done.
-- **The platform (V2) is a standalone POC.** It proves you can build a Hebrew AI tutoring platform if needed. Don't delete.
-- **The pitch deck and market research** are reusable for adjacent ideas.
-- **Nothing is wasted.** You learned market + wrote a real platform + understood the pivot mechanism.
+## The agent-autonomous question (2026-04-19 update)
 
-## If you return
-- Start from V1 (consulting), not V2 (platform).
-- The platform becomes a demo you use as a consultant ("I'll build this for your network"), not a product you sell.
-- Or: pick **one specific pain** from V1 research and build a tiny consulting offer around it — no platform, no SaaS, no beta form, just a packaged service.
+Elad: *"לו זה היה פרויקט אוטונומי לחלוטין שמקודם על ידי הסוכנים — יש מצב שזה היה עובד. יש מצב שאנחנו צריכים לפחות פרויקט אחד כזה אצלנו שאתה והסוכנים מקדמים לגמרי ביחד או לבד."*
+
+This reframes the whole project. **The friction wasn't the business model — it was the manual selling/ops load.** If the business model V1 (courses+workshops) ran on top of an agent network that did outreach, scheduling, content preparation, invoicing, follow-ups — then Elad could **teach and develop** while the system **sold and served.**
+
+See `~/projects/autonomous-project-plan-2026-04-19.md` (forthcoming in this sprint) for the agent-autonomous project design.
+
+## If you return to V1 (recommended path)
+
+1. **Keep it simple.** MoreTech Courses as a brand. Catalog of 5-8 workshops with pricing.
+2. **Agent-led outreach** — Kami DMs schools, Kaylee researches prospects, I build materials.
+3. **One website, one Excel, one pricing page.** No platform, no beta, no SaaS.
+4. **Goal:** 10 booked workshops in 90 days. Each 3,000-8,000 ₪. That's 30-80K revenue for you, and it proves the model.
+5. **Then decide:** scale with more workshops, train others to deliver, or platform-ize (only after you have 50+ delivered).
+
+## What's in this repo going forward
+
+- **Keep:** `business-docs/` (workshop curricula, pricing), competitive-analysis, research
+- **Park:** `platform/` Next.js app (reusable demo asset, not the business)
+- **Park:** MoreTech website + pitch deck (reusable for V1 with rebranding)
+- **Archive:** STRATEGIC-PLAN-2026.md (valuable research, not the path forward)
+- **Add:** `V1-REVIVAL-PLAN.md` when you're ready to restart — small, focused, agent-backed
 
 ## Status
-Parked. Not dead. Snapshot preserved in this commit.
+Parked with clear path to revival. Not dead. Not even asleep — just waiting for the agent network to be ready to drive.

@@ -1,87 +1,118 @@
-# EduTech B2B - Progress
+# EduTech - Progress
 
-## Status: WEBSITE DEPLOYED
-## Last Updated: 2026-02-13
+## Status: BUILDING MVP
+## Last Updated: 2026-03-10
 
 ## Current State
-Full launch package for MoreTech completed and website deployed to GitHub Pages. All deliverables verified complete. Ready for market entry.
+Transitioned from strategic planning to active development. The EduTech AI platform is now a working Next.js project with a landing page and the first AI tool (lesson planner). All strategy docs, pitch deck, outreach materials, and AI Sandbox application are ready.
 
 ## What Was Done
-- [x] Initial market mapping - 5 customer segments identified
-- [x] Pain points hypothesis - teacher shortage as primary focus
-- [x] Service catalog draft - "MoreTech" package concept
-- [x] Skills & tools audit - mapped all relevant skills for B2B workflow
-- [x] Value proposition design - 3-tier pricing model
-- [x] Sales process outline - 8-week funnel
-- [x] Market research deep-dive (see RESEARCH.md)
-- [x] Pitch Deck - 12 slides PPTX (see pitch-deck/)
-- [x] Professional Website - Next.js 16 + 10 components (see website/)
-- [x] Email Outreach Templates - 5 templates + timeline (see outreach/emails.md)
-- [x] Competitive Analysis - 13 competitors + SWOT (see competitive-analysis.md)
-- [x] Business Plan - 10 sections + financials (see business-plan/plan.md)
-- [x] GitHub repo created (github.com/eladjak/moretech)
-- [x] Website deployed to GitHub Pages (https://eladjak.github.io/moretech/)
-- [x] GitHub Actions CI/CD workflow for automatic deployment on push
-- [x] Next.js configured for static export (output: 'export', basePath: '/moretech')
 
-## Key Decisions Made
-1. **Target segment**: Private education networks (ORT, AMIT, Atid, Amal, Darca, Mofet)
-2. **Primary pain**: Teacher shortage in technology/CS (22% drop)
-3. **Solution concept**: "MoreTech" - turn existing teachers into tech teachers
-4. **Pricing model**: Per-teacher-per-year (8K-22K range)
-5. **Differentiation**: Full package (training + curriculum + mentoring + dashboard)
-6. **First target**: AMIT network (already in Program 720, open to innovation)
-7. **Strategic approach**: Position as implementation partner of CET/government, not competitor
-8. **Defensive moat**: Build internal teaching capacity vs external vendor dependency
+### Phase 1: MoreTech (completed, now sub-brand)
+- [x] Market research - teacher shortage, 5 customer segments
+- [x] MoreTech website deployed (GitHub Pages)
+- [x] 12-slide pitch deck
+- [x] 5 email outreach templates
+- [x] Competitive analysis (13 competitors)
+- [x] Business plan (10 sections)
+- [x] GitHub Actions CI/CD
 
-## Financial Projections (Conservative/Realistic)
-| Year | Revenue | Margin | Teachers | Networks |
-|------|---------|--------|----------|----------|
-| 1 | 900K NIS | -38% (investment) | ~60 | 2 |
-| 2 | 2.7M NIS | 20% | ~180 | 4 |
-| 3 | 5.25M NIS | 39% | ~350 | 7 |
-- Break-even: Q2 2027
-- LTV/CAC ratio: 20x
+### Phase 2: Strategic Reset (March 2026)
+- [x] Read 11 original specification documents
+- [x] Identified gap between original vision and what was built
+- [x] Ran 6 parallel research agents (market, competitors, AI, global models, financials, assets)
+- [x] Deep market research: Israeli EdTech $1.2B, 506 startups
+- [x] Created comprehensive STRATEGIC-PLAN-2026.md
 
-## Deliverables
+### Phase 3: Platform Development (March 2026)
+- [x] Set up Next.js 16 + React 19 + TypeScript project (`platform/`)
+- [x] Installed Supabase, AI SDK (Anthropic + Google), next-intl, shadcn/ui
+- [x] Built Hebrew RTL landing page with:
+  - Hero section with value proposition
+  - Stats bar (market data)
+  - 5 AI tools showcase (1 active, 4 coming soon)
+  - Benefits section
+  - Beta signup form (50 first teachers)
+  - Footer with sub-brands
+- [x] Built lesson planner AI tool (`/tools/lesson-planner`):
+  - Form: subject, grade level, topic, duration, notes
+  - Streaming AI response (Claude or Gemini backend)
+  - Copy-to-clipboard functionality
+  - Adapted to Israeli curriculum
+  - 17 subjects, 7 grade levels
+- [x] API route with Hebrew pedagogical system prompt
+- [x] TypeScript passes with zero errors
+- [x] Build compiles successfully
+- [x] Added `edutech.co.il` to master plan domain purchases (high priority)
+
+### Phase 3b: Business Materials (March 2026)
+- [x] New EduTech pitch deck - 12 slides, full HTML (`pitch-deck/edutech-pitch-2026.html`)
+- [x] MindCET outreach email (`outreach/mindcet-email.md`)
+- [x] Beta teacher recruitment strategy (`outreach/beta-recruitment-strategy.md`)
+- [x] AI Sandbox application draft (`outreach/ai-sandbox-application.md`)
+
+## Key Strategic Decisions (March 2026)
+
+1. **EduTech = platform company** (not consulting company)
+2. **Core product: Hebrew AI tools for teachers** (Israeli MagicSchool)
+3. **MoreTech becomes sub-brand** for B2B teacher training services
+4. **HiTechKids stays as sub-brand** for kids camps/workshops
+5. **PLG model**: Free for individual teachers → school/network contracts
+6. **Hybrid delivery**: Platform + workshops = churn under 10%
+7. **Target price under NIS 250K** per network deal (avoids tender)
+8. **First target networks**: AMIT (63 schools) and ORT (237 schools)
+9. **Key partnerships**: MindCET (CET incubator), AI Sandbox (10M NIS)
+10. **AI Sandbox**: Pursuing - good fit, low effort, high potential reward
+
+## Financial Projections
+
+| Year | Workshops | Platform | Network | Total |
+|------|-----------|----------|---------|-------|
+| 1 | 200K | 50K | 0 | 250K NIS |
+| 2 | 400K | 300K | 480K | 1.18M NIS |
+| 3 | 500K | 900K | 1.2M | 2.6M NIS |
+| 4 | 400K | 2.0M | 2.4M | 4.8M NIS |
+
+## Next Steps (Immediate)
+
+1. **Purchase `edutech.co.il` domain** (added to master plan)
+2. **Configure Supabase project** - create project, set up auth, connect
+3. **Wire up beta signup form** - save to Supabase
+4. **Deploy platform to Vercel** - connect to domain when ready
+5. **Add API keys** - Anthropic/Google for lesson planner to work
+6. **Send MindCET email** - draft is ready
+7. **Start beta recruitment** - strategy doc is ready, post in teacher communities
+8. **Research AI Sandbox deadlines** - application draft is ready
+9. **Build next 2 tools** - test generator, differentiator
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 16 + React 19 |
+| Language | TypeScript |
+| UI | shadcn/ui + Tailwind CSS |
+| Auth | Supabase Auth (planned) |
+| Database | Supabase (planned) |
+| AI | Claude API + Gemini API (via Vercel AI SDK) |
+| Hosting | Vercel (planned) |
+| i18n | next-intl (planned) |
+
+## Files
+
 | File | Description |
 |------|-------------|
-| RESEARCH.md | Full market research (Hebrew) |
-| pitch-deck/moretech-pitch.pptx | 12-slide pitch deck (555KB) |
-| pitch-deck/slides.html | HTML source for pitch deck |
-| pitch-deck/presentation-script.md | Talking points per slide |
-| website/ | Next.js 16 professional website |
-| outreach/emails.md | 5 email templates + outreach timeline |
-| competitive-analysis.md | 13 competitors + SWOT + positioning |
-| business-plan/plan.md | 10-section business plan + financials |
-| .github/workflows/deploy.yml | GitHub Actions CI/CD for Pages deployment |
-
-## Deployment Info
-- **GitHub Repo**: https://github.com/eladjak/moretech
-- **Live Website**: https://eladjak.github.io/moretech/
-- **CI/CD**: GitHub Actions auto-deploys on push to `main`
-- **Custom Domain**: When moretech.co.il is ready, update `basePath` in next.config.ts and add CNAME
-
-## Next Steps
-1. Review all deliverables and refine messaging
-2. ~~Set up domain (moretech.co.il) and deploy website to Vercel~~ -- Deployed to GitHub Pages
-3. Purchase moretech.co.il domain and configure custom domain in GitHub Pages
-4. Update contact info in Contact.tsx (replace placeholder phone +972-XX-XXX-XXXX)
-5. Create WhatsApp outreach messages (whatsapp skill)
-6. Identify specific contacts at AMIT and ORT networks
-7. Send first outreach emails
-8. Schedule pilot workshops
-9. Build one-pager PDF (html-to-pdf skill)
-10. Set up CRM tracking for outreach
-
-## Smart Tools Workflow
-- **Research**: WebSearch + dispatching-parallel-agents
-- **Strategy/Plans**: writing-plans + personal-agent
-- **Pitch Deck**: presentation-architect -> html-to-pptx (Hebrew RTL)
-- **Proposals/PDFs**: html-to-pdf (Hebrew RTL)
-- **Outreach emails**: email-writer
-- **WhatsApp outreach**: whatsapp skill
-- **Blog/Content marketing**: wordpress-publisher
-- **Meeting prep**: meeting-scheduler + calendar
-- **Voice messages**: speech-generator
-- **Pattern**: OBSERVE -> ANALYZE -> LEARN -> APPLY
+| `platform/` | **NEW** - EduTech AI platform (Next.js) |
+| `platform/src/app/page.tsx` | Landing page (Hebrew RTL) |
+| `platform/src/app/tools/lesson-planner/page.tsx` | Lesson planner AI tool |
+| `platform/src/app/api/generate-lesson/route.ts` | AI API route (streaming) |
+| STRATEGIC-PLAN-2026.md | Full strategic plan |
+| `pitch-deck/edutech-pitch-2026.html` | **NEW** - EduTech pitch deck |
+| `outreach/mindcet-email.md` | **NEW** - MindCET outreach email |
+| `outreach/beta-recruitment-strategy.md` | **NEW** - Beta recruitment plan |
+| `outreach/ai-sandbox-application.md` | **NEW** - AI Sandbox application |
+| RESEARCH.md | Market research (Hebrew) |
+| competitive-analysis.md | 13 competitors + SWOT |
+| business-plan/plan.md | Original MoreTech business plan |
+| website/ | MoreTech website (stays as sub-page) |
+| business-docs/ | Logos, photos, workshop materials |

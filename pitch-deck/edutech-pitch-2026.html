@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduTech – ה-MagicSchool של ישראל | Pitch Deck 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      direction: rtl;
+      text-align: right;
+      background: #0f0c29;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ─── Slide System ─── */
+    .slide {
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide-inner {
+      max-width: 1100px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ─── Backgrounds ─── */
+    .bg-1 { background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%); }
+    .bg-2 { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
+    .bg-3 { background: linear-gradient(135deg, #0d1117 0%, #1a237e 60%, #283593 100%); }
+    .bg-4 { background: linear-gradient(135deg, #0a0a1a 0%, #1b5e20 40%, #2e7d32 100%); }
+    .bg-5 { background: linear-gradient(135deg, #1a0533 0%, #4a148c 50%, #6a1b9a 100%); }
+    .bg-6 { background: linear-gradient(135deg, #0d2137 0%, #0277bd 60%, #01579b 100%); }
+    .bg-7 { background: linear-gradient(135deg, #1c0a2e 0%, #6a1b9a 50%, #8e24aa 100%); }
+    .bg-8 { background: linear-gradient(135deg, #0a1628 0%, #1565c0 50%, #1976d2 100%); }
+    .bg-9 { background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%); }
+    .bg-10 { background: linear-gradient(135deg, #1a0533 0%, #2e0a5e 40%, #4527a0 100%); }
+    .bg-11 { background: linear-gradient(135deg, #0d1117 0%, #0d47a1 60%, #1565c0 100%); }
+    .bg-12 { background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%); }
+
+    /* ─── Decorative Blobs ─── */
+    .slide::before,
+    .slide::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.25;
+      pointer-events: none;
+    }
+    .slide::before { width: 500px; height: 500px; top: -150px; left: -150px; }
+    .slide::after  { width: 400px; height: 400px; bottom: -100px; right: -100px; }
+
+    .bg-1::before  { background: #7c3aed; }
+    .bg-1::after   { background: #4f46e5; }
+    .bg-2::before  { background: #ef4444; }
+    .bg-2::after   { background: #f97316; }
+    .bg-3::before  { background: #3b82f6; }
+    .bg-3::after   { background: #06b6d4; }
+    .bg-4::before  { background: #22c55e; }
+    .bg-4::after   { background: #14b8a6; }
+    .bg-5::before  { background: #a855f7; }
+    .bg-5::after   { background: #ec4899; }
+    .bg-6::before  { background: #38bdf8; }
+    .bg-6::after   { background: #818cf8; }
+    .bg-7::before  { background: #c084fc; }
+    .bg-7::after   { background: #f472b6; }
+    .bg-8::before  { background: #60a5fa; }
+    .bg-8::after   { background: #34d399; }
+    .bg-9::before  { background: #4ade80; }
+    .bg-9::after   { background: #38bdf8; }
+    .bg-10::before { background: #f59e0b; }
+    .bg-10::after  { background: #f97316; }
+    .bg-11::before { background: #818cf8; }
+    .bg-11::after  { background: #6ee7b7; }
+    .bg-12::before { background: #7c3aed; }
+    .bg-12::after  { background: #06b6d4; }
+
+    /* ─── Slide Numbers ─── */
+    .slide-number {
+      position: absolute;
+      bottom: 28px;
+      left: 40px;
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 1px;
+      z-index: 10;
+    }
+
+    /* ─── Typography ─── */
+    .tag {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      margin-bottom: 24px;
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 80px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4.5vw, 60px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: clamp(20px, 2.5vw, 32px);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    p, li {
+      font-size: clamp(16px, 1.8vw, 22px);
+      font-weight: 400;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .highlight {
+      background: linear-gradient(90deg, #818cf8, #c084fc, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .highlight-green {
+      background: linear-gradient(90deg, #34d399, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .highlight-gold {
+      background: linear-gradient(90deg, #fbbf24, #f59e0b, #f97316);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─── Cards & Grids ─── */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 32px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 28px;
+      backdrop-filter: blur(12px);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    .card-accent {
+      background: linear-gradient(135deg, rgba(129,140,248,0.18), rgba(192,132,252,0.12));
+      border: 1px solid rgba(129,140,248,0.35);
+      border-radius: 20px;
+      padding: 28px;
+    }
+
+    /* ─── Stat / Big Numbers ─── */
+    .stat-number {
+      font-size: clamp(44px, 6vw, 72px);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.4;
+    }
+
+    /* ─── Progress/Timeline Bars ─── */
+    .bar-container {
+      margin: 10px 0;
+    }
+
+    .bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .bar-track {
+      height: 10px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 6px;
+      background: linear-gradient(90deg, #818cf8, #c084fc);
+    }
+
+    /* ─── Icons / Emoji Badges ─── */
+    .icon-badge {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(129,140,248,0.3), rgba(192,132,252,0.3));
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+
+    /* ─── Table ─── */
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 28px;
+    }
+
+    .pricing-table th, .pricing-table td {
+      padding: 14px 18px;
+      text-align: right;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      font-size: 15px;
+    }
+
+    .pricing-table th {
+      background: rgba(129,140,248,0.2);
+      font-weight: 700;
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .pricing-table tr:hover td { background: rgba(255,255,255,0.05); }
+
+    /* ─── Logo Placeholder ─── */
+    .logo-placeholder {
+      width: 120px;
+      height: 120px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #818cf8, #c084fc, #f472b6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      font-weight: 900;
+      color: #fff;
+      margin: 0 auto 32px;
+      box-shadow: 0 20px 60px rgba(129,140,248,0.5);
+    }
+
+    /* ─── Divider ─── */
+    .divider {
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #818cf8, #c084fc);
+      border-radius: 2px;
+      margin: 20px 0;
+    }
+
+    /* ─── Check List ─── */
+    .check-list {
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 17px;
+    }
+
+    .check-list li::before {
+      content: '✓';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #34d399, #06b6d4);
+      font-size: 13px;
+      font-weight: 700;
+      color: #0d1117;
+      margin-top: 2px;
+    }
+
+    /* ─── Problem X List ─── */
+    .x-list { list-style: none; margin-top: 16px; }
+
+    .x-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .x-list li .x-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ef4444, #f97316);
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 2px;
+    }
+
+    /* ─── Chart Bars ─── */
+    .chart-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+      height: 200px;
+      margin-top: 28px;
+      padding-top: 20px;
+    }
+
+    .chart-bar-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      height: 100%;
+      justify-content: flex-end;
+    }
+
+    .chart-bar-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .chart-bar {
+      width: 100%;
+      border-radius: 8px 8px 0 0;
+      background: linear-gradient(180deg, #818cf8, #4f46e5);
+    }
+
+    .chart-bar-label {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+    }
+
+    /* ─── Comparison Row ─── */
+    .compare-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.06);
+      margin-bottom: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .compare-label { font-size: 16px; font-weight: 500; }
+    .compare-no { color: #ef4444; font-size: 20px; }
+    .compare-yes { color: #34d399; font-size: 20px; }
+
+    /* ─── Timeline ─── */
+    .timeline {
+      position: relative;
+      padding-right: 30px;
+      margin-top: 24px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, #818cf8, #c084fc, #f472b6);
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-right: 28px;
+      padding-bottom: 28px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      right: -7px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #818cf8, #c084fc);
+      border: 3px solid #0f0c29;
+    }
+
+    /* ─── Navigation Dots ─── */
+    .nav-dots {
+      position: fixed;
+      left: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 100;
+    }
+
+    .nav-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-dot:hover, .nav-dot.active {
+      background: #818cf8;
+      transform: scale(1.4);
+    }
+
+    /* ─── Scroll hint ─── */
+    .scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,0.4);
+      font-size: 12px;
+      z-index: 5;
+      animation: bob 2s ease-in-out infinite;
+    }
+
+    @keyframes bob {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-8px); }
+    }
+
+    /* ─── CTA Button ─── */
+    .btn-primary {
+      display: inline-block;
+      padding: 18px 48px;
+      background: linear-gradient(135deg, #818cf8, #c084fc);
+      color: #fff;
+      font-family: 'Heebo', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 12px 40px rgba(129,140,248,0.45);
+      transition: all 0.2s ease;
+      margin-top: 16px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 50px rgba(129,140,248,0.6);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 16px 40px;
+      background: transparent;
+      color: #fff;
+      font-family: 'Heebo', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 16px;
+      margin-right: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: #818cf8;
+      background: rgba(129,140,248,0.1);
+    }
+
+    /* ─── Pill Tag ─── */
+    .pill {
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-left: 8px;
+      margin-bottom: 4px;
+    }
+
+    .pill-purple { background: rgba(129,140,248,0.2); color: #a5b4fc; border: 1px solid rgba(129,140,248,0.3); }
+    .pill-green  { background: rgba(52,211,153,0.2);  color: #6ee7b7; border: 1px solid rgba(52,211,153,0.3); }
+    .pill-red    { background: rgba(239,68,68,0.2);   color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
+    .pill-gold   { background: rgba(251,191,36,0.2);  color: #fcd34d; border: 1px solid rgba(251,191,36,0.3); }
+    .pill-blue   { background: rgba(56,189,248,0.2);  color: #7dd3fc; border: 1px solid rgba(56,189,248,0.3); }
+
+    /* ─── Feature Tool Card ─── */
+    .tool-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 16px;
+      padding: 22px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .tool-card .icon { font-size: 28px; flex-shrink: 0; }
+    .tool-card h4 { font-size: 17px; margin-bottom: 4px; }
+    .tool-card p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.5; }
+
+    /* ─── Funnel / Arrow Steps ─── */
+    .funnel-steps {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .funnel-step {
+      flex: 1;
+      min-width: 140px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 20px 16px;
+      text-align: center;
+      position: relative;
+    }
+
+    .funnel-step:not(:last-child)::after {
+      content: '◀';
+      position: absolute;
+      left: -16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 22px;
+      color: rgba(129,140,248,0.7);
+      z-index: 1;
+    }
+
+    .funnel-step:first-child { border-radius: 14px 0 0 14px; }
+    .funnel-step:last-child  { border-radius: 0 14px 14px 0; }
+
+    .funnel-step h4 { font-size: 15px; color: #a5b4fc; margin-bottom: 6px; }
+    .funnel-step p  { font-size: 13px; color: rgba(255,255,255,0.65); }
+
+    /* ─── Moat Grid ─── */
+    .moat-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .moat-item .moat-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ─── Print Styles ─── */
+    @media print {
+      html { scroll-behavior: auto; }
+      body { background: #fff; color: #111; }
+
+      .slide {
+        min-height: auto;
+        page-break-inside: avoid;
+        page-break-after: always;
+        padding: 40px;
+        background: #f8f9ff !important;
+      }
+
+      .slide::before, .slide::after { display: none; }
+      .nav-dots, .scroll-hint { display: none; }
+
+      h1, h2, h3, h4 { color: #1a1a2e !important; -webkit-text-fill-color: #1a1a2e !important; }
+      p, li { color: #333 !important; }
+
+      .highlight, .highlight-green, .highlight-gold {
+        -webkit-text-fill-color: #4f46e5 !important;
+        background: none !important;
+      }
+
+      .card, .card-accent, .tool-card, .moat-item, .compare-row, .funnel-step {
+        background: #f0f2ff !important;
+        border: 1px solid #c7d2fe !important;
+        color: #1a1a2e !important;
+      }
+
+      .tag, .pill { color: #4f46e5 !important; border-color: #4f46e5 !important; background: #e0e7ff !important; }
+      .btn-primary, .btn-outline { background: #4f46e5 !important; color: #fff !important; }
+
+      .pricing-table th { background: #e0e7ff !important; color: #1a1a2e !important; }
+      .pricing-table td { color: #1a1a2e !important; }
+
+      .chart-bar { background: #4f46e5 !important; }
+      .stat-number { color: #4f46e5 !important; -webkit-text-fill-color: #4f46e5 !important; }
+      .tag { color: #4f46e5 !important; }
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 900px) {
+      .slide { padding: 40px 32px; }
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; gap: 16px; }
+      .funnel-steps { flex-direction: column; }
+      .funnel-step { min-width: 100%; }
+      .funnel-step:not(:last-child)::after { display: none; }
+      .funnel-step:first-child, .funnel-step:last-child { border-radius: 14px; }
+      .nav-dots { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation Dots -->
+<nav class="nav-dots" aria-label="ניווט שקפים">
+  <a href="#slide-1"  class="nav-dot active" title="כותרת"></a>
+  <a href="#slide-2"  class="nav-dot" title="הבעיה"></a>
+  <a href="#slide-3"  class="nav-dot" title="ההזדמנות"></a>
+  <a href="#slide-4"  class="nav-dot" title="הפתרון"></a>
+  <a href="#slide-5"  class="nav-dot" title="המוצר"></a>
+  <a href="#slide-6"  class="nav-dot" title="מודל עסקי"></a>
+  <a href="#slide-7"  class="nav-dot" title="שוק היעד"></a>
+  <a href="#slide-8"  class="nav-dot" title="חפיר הגנתי"></a>
+  <a href="#slide-9"  class="nav-dot" title="Go-to-Market"></a>
+  <a href="#slide-10" class="nav-dot" title="תחזית פיננסית"></a>
+  <a href="#slide-11" class="nav-dot" title="הצוות"></a>
+  <a href="#slide-12" class="nav-dot" title="CTA"></a>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 1: כותרת                                 -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="slide-1" class="slide bg-1">
+  <div class="slide-inner" style="text-align: center;">
+
+    <div class="logo-placeholder">E</div>
+
+    <div class="tag">פיץ׳ דק · 2026</div>
+
+    <h1>
+      <span class="highlight">EduTech</span>
+    </h1>
+
+    <h2 style="font-size: clamp(24px, 3.5vw, 46px); font-weight: 700; color: rgba(255,255,255,0.9);">
+      כלי AI בעברית למורים ישראליים
+    </h2>
+
+    <div class="divider" style="margin: 24px auto;"></div>
+
+    <p style="font-size: clamp(20px, 2.5vw, 30px); font-weight: 600; color: rgba(255,255,255,0.8); margin-bottom: 40px;">
+      ה-MagicSchool של ישראל
+    </p>
+
+    <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+      <span class="pill pill-purple">🇮🇱 עברית Native</span>
+      <span class="pill pill-green">AI למורים</span>
+      <span class="pill pill-gold">EdTech B2B</span>
+      <span class="pill pill-blue">SaaS + סדנאות</span>
+    </div>
+
+    <p style="margin-top: 48px; font-size: 16px; color: rgba(255,255,255,0.45);">
+      אלעד יעקובוביץ׳ · elad@hiteclearning.co.il · מרץ 2026
+    </p>
+
+  </div>
+
+  <div class="scroll-hint">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+    <span>גלול</span>
+  </div>
+
+  <span class="slide-number">01 / 12</span>
+</section>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 2: הבעיה                                 -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="slide-2" class="slide bg-2">
+  <div class="slide-inner">
+
+    <div class="tag">⚠️ הבעיה</div>
+    <h2>המורים הישראליים <span class="highlight">לא מוכנים</span> לעידן ה-AI</h2>
+    <div class="divider"></div>
+
+    <div class="grid-3" style="margin-top: 36px;">
+
+      <div class="card" style="text-align: center;">
+        <div class="stat-number">
+          <span class="highlight">76%</span>
+        </div>
+        <div class="stat-label">
+          מהמורים לא קיבלו<br />
+          <strong>שום הכשרת AI</strong>
+        </div>
+      </div>
+
+      <div class="card" style="text-align: center;">
+        <div class="stat-number">
+          <span class="highlight" style="background: linear-gradient(90deg,#ef4444,#f97316); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">15+</span>
+        </div>
+        <div class="stat-label">
+          שעות בשבוע על<br />
+          <strong>עבודה אדמיניסטרטיבית</strong>
+        </div>
+      </div>
+
+      <div class="card" style="text-align: center;">
+        <div class="stat-number">
+          <span class="highlight-gold">0</span>
+        </div>
+        <div class="stat-label">
+          כלי AI חינוכי<br />
+          <strong>בעברית קיים כיום</strong>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="grid-2" style="margin-top: 28px;">
+
+      <div class="card-accent">
+        <ul class="x-list">
+          <li>
+            <span class="x-icon">✗</span>
+            <span>כלים קיימים (MagicSchool, Canva AI) הם באנגלית בלבד – לא מותאמים לתכנית הלימודים הישראלית</span>
+          </li>
+          <li>
+            <span class="x-icon">✗</span>
+            <span>מורים מבזבזים זמן יקר על הכנת חומרים, מבחנים ותכתובות – במקום על הוראה</span>
+          </li>
+          <li>
+            <span class="x-icon">✗</span>
+            <span>60% מהמורים כבר משתמשים ב-AI – אבל ב"בית הסתר", ללא הכוונה מקצועית</span>
+          </li>
+        </ul>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+
+        <div class="card" style="padding: 20px;">
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <div style="font-size: 36px;">👩‍🏫</div>
+            <div>
+              <h4>מורה ממוצע בישראל</h4>
+              <p style="font-size: 15px; color: rgba(255,255,255,0.65);">מכין 5-8 מבחנים, 3-4 עלוני הורים ו-12 שיעורים מפורטים בחודש – הכל ידנית</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 20px;">
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <div style="font-size: 36px;">🏫</div>
+            <div>
+              <h4>בתי ספר ישראליים</h4>
+              <p style="font-size: 15px; color: rgba(255,255,255,0.65);">מחויבים לשלב AI בהוראה מ-2025 – אבל אין להם כלי ממוקד ובשפה שלהם</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <span class="slide-number">02 / 12</span>
+</section>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 3: ההזדמנות                              -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="slide-3" class="slide bg-3">
+  <div class="slide-inner">
+
+    <div class="tag">📈 ההזדמנות</div>
+    <h2>שוק ענק – <span class="highlight-green">ללא מתחרה ישראלי</span></h2>
+    <div class="divider"></div>
+
+    <div class="grid-4" style="margin-top: 32px;">
+
+      <div class="card" style="text-align: center;">
+        <div class="stat-number"><span class="highlight-green">$45M</span></div>
+        <div class="stat-label">הכנסות MagicSchool<br /><strong>ואפס עברית</strong></div>
+      </div>
+
+      <div class="card" style="text-align: center;">
+        <div class="stat-number"><span class="highlight-green">$1.2B</span></div>
+        <div class="stat-label">שוק EdTech<br /><strong>ישראלי</strong></div>
+      </div>
+
+      <div class="card" style="text-align: center;">
+        <div class="stat-number"><span class="highlight-gold">1.49B</span></div>
+        <div class="stat-label">תקציב STEM<br /><strong>בש"ח</strong></div>
+      </div>
+
+      <div class="card" style="text-align: center;">
+        <div class="stat-number"><span class="highlight">10M</span></div>
+        <div class="stat-label">AI Sandbox<br /><strong>בש"ח לפיילוטים</strong></div>
+      </div>
+
+    </div>
+
+    <div class="grid-2" style="margin-top: 28px;">
+
+      <div class="card-accent">
+        <h3 style="font-size: 22px; margin-bottom: 16px;">📊 המקרה של MagicSchool</h3>
+        <ul class="check-list">
+          <li>6 מיליון מורים ברחבי העולם</li>
+          <li>$45M הכנסות שנתיות</li>
+          <li>גדל מ-0 ל-$45M בפחות מ-3 שנים</li>
+          <li style="font-weight: 700;">אפס נוכחות בישראל. אפס עברית.</li>
+        </ul>
+        <div style="margin-top: 16px; padding: 14px; background: rgba(52,211,153,0.12); border-radius: 10px; border: 1px solid rgba(52,211,153,0.25);">
+          <p style="font-size: 15px; color: #6ee7b7; font-weight: 600;">
+            💡 אנחנו יכולים לבנות את אותו מוצר – בעברית, מותאם לישראל – לפני שהם יגיעו לכאן
+          </p>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+
+        <div class="card" style="padding: 22px;">
+          <h4 style="color: #7dd3fc; margin-bottom: 10px;">📈 AI בחינוך – צמיחה גלובלית</h4>
+          <div class="bar-container">
+            <div class="bar-label"><span>2024</span><span>$6.9B</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width: 17%;"></div></div>
+          </div>
+          <div class="bar-container" style="margin-top: 10px;">
+            <div class="bar-label"><span>2030</span><span>$41B</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
+          </div>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.55); margin-top: 10px;">CAGR: <strong style="color: #6ee7b7;">42%</strong> · המיסה של מחר נבנית היום</p>
+        </div>
+
+        <div class="card" style="padding: 22px;">
+          <h4 style="color: #a5b4fc; margin-bottom: 10px;">🏛️ תמיכה ממשלתית</h4>
+          <p style="font-size: 15px; color: rgba(255,255,255,0.75);">
+            AI Sandbox מנגישה <strong>10M ש"ח</strong> לפיילוטים ב-EdTech.
+            ספקי GEFEN מקבלים גישה ישירה ל-<strong>2,300+ בתי ספר</strong> דרך מט"ח.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <span class="slide-number">03 / 12</span>
+</section>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 4: הפתרון                                -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="slide-4" class="slide bg-4">
+  <div class="slide-inner">
+
+    <div class="tag">💡 הפתרון</div>
+    <h2>פלטפורמת AI <span class="highlight-green">בעברית Native</span> למורים</h2>
+    <div class="divider"></div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 32px; margin-top: 32px;">
+
+      <div>
+        <p style="font-size: 18px; line-height: 1.8; color: rgba(255,255,255,0.85);">
+          EduTech היא הפלטפורמה הראשונה בישראל שמאפשרת למורים לנצל את כוח ה-AI
+          <strong style="color: #6ee7b7;"> בעברית מלאה</strong>, מותאמת לתכנית הלימודים הישראלית,
+          ולרגולציה של משרד החינוך.
+        </p>
+
+        <div style="margin-top: 28px;">
+          <h3 style="font-size: 20px; margin-bottom: 16px; color: #6ee7b7;">לא מתורגם. בנוי מאפס לעברית.</h3>
+
+          <div class="grid-2" style="margin-top: 0; gap: 12px;">
+            <div style="padding: 14px; background: rgba(52,211,153,0.1); border-radius: 12px; border: 1px solid rgba(52,211,153,0.2); text-align: center;">
+              <div style="font-size: 24px; margin-bottom: 4px;">🇮🇱</div>
+              <div style="font-size: 14px; color: #6ee7b7; font-weight: 600;">עברית מלאה + RTL</div>
+            </div>
+            <div style="padding: 14px; background: rgba(52,211,153,0.1); border-radius: 12px; border: 1px solid rgba(52,211,153,0.2); text-align: center;">
+              <div style="font-size: 24px; margin-bottom: 4px;">📚</div>
+              <div style="font-size: 14px; color: #6ee7b7; font-weight: 600;">תכנית לימודים ישראלית</div>
+            </div>
+            <div style="padding: 14px; background: rgba(52,211,153,0.1); border-radius: 12px; border: 1px solid rgba(52,211,153,0.2); text-align: center;">
+              <div style="font-size: 24px; margin-bottom: 4px;">⚖️</div>
+              <div style="font-size: 14px; color: #6ee7b7; font-weight: 600;">רגולציה ישראלית</div>
+            </div>
+            <div style="padding: 14px; background: rgba(52,211,153,0.1); border-radius: 12px; border: 1px solid rgba(52,211,153,0.2); text-align: center;">
+              <div style="font-size: 24px; margin-bottom: 4px;">🤖</div>
+              <div style="font-size: 14px; color: #6ee7b7; font-weight: 600;">Claude + Gemini AI</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div>
+        <h3 style="font-size: 20px; margin-bottom: 20px;">🗺️ מפת הדרכים</h3>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <h4 style="color: #6ee7b7;">MVP – 5 כלים ליבה</h4>
+            <p style="font-size: 15px; color: rgba(255,255,255,0.65);">מחולל שיעורים · מחולל מבחנים · מדיפרנציאטור · מכתב להורים · עוזר AI כללי</p>
+            <span class="pill pill-green" style="margin-top: 6px; display: inline-block;">Q1 2026</span>
+          </div>
+
+          <div class="timeline-item">
+            <h4 style="color: #7dd3fc;">גרסה 2.0 – 15 כלים</h4>
+            <p style="font-size: 15px; color: rgba(255,255,255,0.65);">מתאם תכנית שנתית · יוצר כרטיסיות לימוד · ניתוח הישגים · כלי Rubric · יוצר אמצעי הוראה</p>
+            <span class="pill pill-blue" style="margin-top: 6px; display: inline-block;">Q3 2026</span>
+          </div>
+
+          <div class="timeline-item">
+            <h4 style="color: #a5b4fc;">גרסה 3.0 – 25 כלים</h4>
+            <p style="font-size: 15px; color: rgba(255,255,255,0.65);">דאשבורד מנהל · AI Classroom Agent · אינטגרציה עם מערכות בי"ס ישראליות</p>
+            <span class="pill pill-purple" style="margin-top: 6px; display: inline-block;">Q1 2027</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <span class="slide-number">04 / 12</span>
+</section>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 5: המוצר                                 -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="slide-5" class="slide bg-5">
+  <div class="slide-inner">
+
+    <div class="tag">🛠️ המוצר</div>
+    <h2>5 כלי ה-AI <span class="highlight">הייבה</span></h2>
+    <div class="divider"></div>
+
+    <!-- Product UI Mockup Placeholder -->
+    <div style="background: rgba(255,255,255,0.06); border: 1px dashed rgba(255,255,255,0.25); border-radius: 20px; padding: 24px; margin-bottom: 32px; text-align: center; min-height: 140px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+      <div style="font-size: 40px; margin-bottom: 8px;">📱</div>
+      <p style="font-size: 16px; color: rgba(255,255,255,0.45);">מסך אפליקציה – EduTech AI Dashboard</p>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.3);">[ Screenshots יוכנסו בגרסה הסופית ]</p>
+    </div>
+
+    <div class="grid-3" style="margin-top: 0;">
+
+      <div class="tool-card">
+        <div class="icon">📝</div>
+        <div>
+          <h4>מחולל שיעורים</h4>
+          <p>מחולל תכנית שיעור מלאה בעברית – מטרות, פעילויות, הערכה – בפחות מ-2 דקות</p>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="icon">📋</div>
+        <div>
+          <h4>מחולל מבחנים</h4>
+          <p>יוצר שאלות מגוונות, בחינות, מבדקים ו-Rubrics מותאמים לחומר ולרמת הכיתה</p>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="icon">🔀</div>
+        <div>
+          <h4>מדיפרנציאטור</h4>
+          <p>מתאים כל חומר לימוד לרמות שונות – מצוינים, ממוצעים, מתקשים, ותלמידים בעלי צרכים</p>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="icon">✉️</div>
+        <div>
+          <h4>מכתב להורים</h4>
+          <p>מנסח תכתובות מקצועיות להורים – דיווח, פנייה, עדכון – בלחיצת כפתור</p>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="icon">🤖</div>
+        <div>
+          <h4>עוזר AI כללי</h4>
+          <p>צ'אטבוט AI חינוכי – מבין הקשר, עונה בעברית, מותאם לסביבת בית ספר ישראלי</p>
+        </div>
+      </div>
+
+      <div class="card-accent" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <div style="font-size: 36px; margin-bottom: 12px;">⚡</div>
+        <h4 style="font-size: 18px; margin-bottom: 8px;">חוסך בממוצע</h4>
+        <div class="stat-number" style="font-size: 52px;"><span class="highlight">8+</span></div>
+        <p style="font-size: 15px; color: rgba(255,255,255,0.65);">שעות לכל מורה בשבוע</p>
+      </div>
+
+    </div>
+
+  </div>
+  <span class="slide-number">05 / 12</span>
+</section>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 6: מודל עסקי                             -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="slide-6" class="slide bg-6">
+  <div class="slide-inner">
+
+    <div class="tag">💰 מודל עסקי</div>
+    <h2><span class="highlight">3 זרמי הכנסה</span> – מיידי עד ארגוני</h2>
+    <div class="divider"></div>
+
+    <div class="grid-3" style="margin-top: 32px;">
+
+      <div class="card" style="border-top: 3px solid #34d399;">
+        <div class="icon-badge" style="background: linear-gradient(135deg, rgba(52,211,153,0.3), rgba(6,182,212,0.3));">🎓</div>
+        <h3 style="font-size: 22px;">סדנאות</h3>
+        <p style="font-size: 15px; color: rgba(255,255,255,0.65); margin-bottom: 16px;">הכנסה מיידית · אפס המתנה למוצר</p>
+        <ul class="check-list" style="margin-top: 0;">
+          <li style="font-size: 15px;">סדנת AI בסיסית – 3,500 ש"ח/יום</li>
+          <li style="font-size: 15px;">תכנית מורים – 6,000 ש"ח/חודש</li>
+          <li style="font-size: 15px;">12-18 בתי ספר בשנה 1</li>
+        </ul>
+        <div style="margin-top: 16px; padding: 12px; background: rgba(52,211,153,0.1); border-radius: 10px;">
+          <p style="font-size: 15px; font-weight: 700; color: #6ee7b7;">תחזית שנה 1: ~250K ש"ח</p>
+        </div>
+      </div>
+
+      <div class="card" style="border-top: 3px solid #818cf8;">
+        <div class="icon-badge">💻</div>
+        <h3 style="font-size: 22px;">מנויי פלטפורמה</h3>
+        <p style="font-size: 15px; color: rgba(255,255,255,0.65); margin-bottom: 16px;">SaaS חודשי / שנתי</p>
+        <ul class="check-list" style="margin-top: 0;">
+          <li style="font-size: 15px;"><strong>Freemium</strong> – 5 שימושים/חודש</li>
+          <li style="font-size: 15px;"><strong>Plus</strong> – 299 ש"ח/שנה</li>
+          <li style="font-size: 15px;"><strong>בית ספר</strong> – 4,900–9,900 ש"ח/שנה</li>
+        </ul>
+        <div style="margin-top: 16px; padding: 12px; background: rgba(129,140,248,0.1); border-radius: 10px;">
+          <p style="font-size: 15px; font-weight: 700; color: #a5b4fc;">הכנסה חוזרת + ויראליות</p>
+        </div>
+      </div>
+
+      <div class="card" style="border-top: 3px solid #f472b6;">
+        <div class="icon-badge" style="background: linear-gradient(135deg, rgba(244,114,182,0.3), rgba(251,191,36,0.3));">🏛️</div>
+        <h3 style="font-size: 22px;">תכניות רשת</h3>
+        <p style="font-size: 15px; color: rgba(255,255,255,0.65); margin-bottom: 16px;">Enterprise לרשתות חינוך</p>
+        <ul class="check-list" style="margin-top: 0;">
+          <li style="font-size: 15px;"><strong>רשת</strong> – 3,500–7,000 ש"ח/בי"ס</li>
+          <li style="font-size: 15px;">Custom onboarding + תמיכה</li>
+          <li style="font-size: 15px;">Integration עם מערכות קיימות</li>
+        </ul>
+        <div style="margin-top: 16px; padding: 12px; background: rgba(244,114,182,0.1); border-radius: 10px;">
+          <p style="font-size: 15px; font-weight: 700; color: #f9a8d4;">סגירות גדולות × 1-2/שנה</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top: 28px;">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>תכנית</th>
+            <th>קהל</th>
+            <th>מחיר</th>
+            <th>מה כלול</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="pill pill-green">Freemium</span></td>
+            <td>מורים אינדיבידואלים</td>
+            <td>חינם</td>
+            <td>5 שימושים/חודש בכל הכלים</td>
+          </tr>
+          <tr>
+            <td><span class="pill pill-purple">Plus</span></td>
+            <td>מורים שרוצים יותר</td>
+            <td>299 ₪/שנה</td>
+            <td>שימוש בלתי מוגבל + עדיפות תמיכה</td>
+          </tr>
+          <tr>
+            <td><span class="pill pill-blue">בית ספר</span></td>
+            <td>מנהלים + צוות מורים</td>
+            <td>4,900–9,900 ₪/שנה</td>
+            <td>כל הצוות + דאשבורד מנהל + הדרכה</td>
+          </tr>
+          <tr>
+            <td><span class="pill pill-gold">רשת</span></td>
+            <td>רשתות חינוך (AMIT, ORT...)</td>
+            <td>3,500–7,000 ₪/בי"ס</td>
+            <td>פריסה מלאה + onboarding + SLA</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <span class="slide-number">06 / 12</span>
+</section>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 7: שוק היעד                              -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="slide-7" class="slide bg-7">
+  <div class="slide-inner">
+
+    <div class="tag">🎯 שוק היעד</div>
+    <h2><span class="highlight">180,000+ מורים</span> ו-4 רשתות עדיפות</h2>
+    <div class="divider"></div>
+
+    <div class="grid-2" style="margin-top: 32px;">
+
+      <div>
+        <h3 style="font-size: 22px; margin-bottom: 20px;">רשתות החינוך – עדיפות</h3>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+
+          <div class="card" style="padding: 18px; display: flex; align-items: center; gap: 16px;">
+            <div style="width: 50px; height: 50px; border-radius: 12px; background: linear-gradient(135deg, #fbbf24, #f97316); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; font-weight: 900;">#1</div>
+            <div style="flex: 1;">
+              <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <h4 style="margin-bottom: 0;">רשת AMIT</h4>
+                <span class="pill pill-gold">63 בתי ספר</span>
+                <span class="pill pill-green">עדיפות עליונה</span>
+              </div>
+              <p style="font-size: 14px; color: rgba(255,255,255,0.6); margin-top: 4px;">מתמקדים בחינוך דתי-לאומי ו-STEM. פתוחים לחדשנות.</p>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 18px; display: flex; align-items: center; gap: 16px;">
+            <div style="width: 50px; height: 50px; border-radius: 12px; background: linear-gradient(135deg, #818cf8, #6366f1); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; font-weight: 900;">#2</div>
+            <div style="flex: 1;">
+              <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <h4 style="margin-bottom: 0;">רשת ORT</h4>
+                <span class="pill pill-purple">237 בתי ספר</span>
+              </div>
+              <p style="font-size: 14px; color: rgba(255,255,255,0.6); margin-top: 4px;">רשת הטכנולוגיה הגדולה בישראל. פנייה ל-AI זבנית מאוד.</p>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 18px; display: flex; align-items: center; gap: 16px;">
+            <div style="width: 50px; height: 50px; border-radius: 12px; background: linear-gradient(135deg, #38bdf8, #0284c7); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; font-weight: 900;">#3</div>
+            <div style="flex: 1;">
+              <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <h4 style="margin-bottom: 0;">רשת עתיד</h4>
+                <span class="pill pill-blue">67 בתי ספר</span>
+              </div>
+              <p style="font-size: 14px; color: rgba(255,255,255,0.6); margin-top: 4px;">מגוון גבוה. מתמקדים בחינוך מקיף ועל-יסודי.</p>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 18px; display: flex; align-items: center; gap: 16px;">
+            <div style="width: 50px; height: 50px; border-radius: 12px; background: linear-gradient(135deg, #a855f7, #7c3aed); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; font-weight: 900;">#4</div>
+            <div style="flex: 1;">
+              <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <h4 style="margin-bottom: 0;">רשת דרכא</h4>
+                <span class="pill pill-purple">41 בתי ספר</span>
+              </div>
+              <p style="font-size: 14px; color: rgba(255,255,255,0.6); margin-top: 4px;">חינוך ערבי ומגזרי. הזדמנות ייחודית לפלטפורמה רב-לשונית.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-size: 22px; margin-bottom: 20px;">גודל השוק הכולל</h3>
+
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+
+          <div class="card-accent" style="text-align: center; padding: 28px;">
+            <div class="stat-number"><span class="highlight">180K+</span></div>
+            <div class="stat-label">מורים בישראל (TAM)</div>
+          </div>
+
+          <div class="grid-2" style="margin-top: 0; gap: 14px;">
+            <div class="card" style="text-align: center; padding: 18px;">
+              <div class="stat-number" style="font-size: 38px;"><span class="highlight-green">5,000</span></div>
+              <div class="stat-label">בתי ספר בישראל</div>
+            </div>
+            <div class="card" style="text-align: center; padding: 18px;">
+              <div class="stat-number" style="font-size: 38px;"><span class="highlight-gold">408</span></div>
+              <div class="stat-label">בתי ספר ב-4 רשתות<br/>היעד שלנו</div>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 20px;">
+            <h4 style="color: #a5b4fc; margin-bottom: 10px;">🤝 שותפויות אסטרטגיות</h4>
+            <ul class="check-list" style="margin-top: 0;">
+              <li style="font-size: 15px;">MindCET (האינקובטור של מט"ח)</li>
+              <li style="font-size: 15px;">AI Sandbox – מענקי פיילוט</li>
+              <li style="font-size: 15px;">גפ"ן – רישום ספק מוסמך</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <span class="slide-number">07 / 12</span>
+</section>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 8: חפיר הגנתי                            -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="slide-8" class="slide bg-8">
+  <div class="slide-inner">
+
+    <div class="tag">🏰 יתרון תחרותי</div>
+    <h2>החפיר ה<span class="highlight">הגנתי</span> של EduTech</h2>
+    <div class="divider"></div>
+
+    <div style="margin-top: 24px; margin-bottom: 28px;">
+      <h3 style="font-size: 18px; color: rgba(255,255,255,0.65); margin-bottom: 16px;">MagicSchool vs EduTech</h3>
+      <div class="compare-row">
+        <span class="compare-label">כלי</span>
+        <span style="display: flex; gap: 40px;"><strong style="color: #ef4444;">MagicSchool</strong><strong style="color: #34d399;">EduTech</strong></span>
+      </div>
+      <div class="compare-row">
+        <span class="compare-label">עברית Native (RTL מלא)</span>
+        <span style="display: flex; gap: 62px;"><span class="compare-no">✗</span><span class="compare-yes">✓</span></span>
+      </div>
+      <div class="compare-row">
+        <span class="compare-label">תכנית לימודים ישראלית</span>
+        <span style="display: flex; gap: 62px;"><span class="compare-no">✗</span><span class="compare-yes">✓</span></span>
+      </div>
+      <div class="compare-row">
+        <span class="compare-label">רישום גפ"ן (ספק מוסמך)</span>
+        <span style="display: flex; gap: 62px;"><span class="compare-no">✗</span><span class="compare-yes">✓</span></span>
+      </div>
+      <div class="compare-row">
+        <span class="compare-label">פלטפורמה + סדנאות (היברידי)</span>
+        <span style="display: flex; gap: 62px;"><span class="compare-no">✗</span><span class="compare-yes">✓</span></span>
+      </div>
+      <div class="compare-row">
+        <span class="compare-label">מחיר מותאם לשוק ישראלי</span>
+        <span style="display: flex; gap: 62px;"><span class="compare-no">✗</span><span class="compare-yes">✓</span></span>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top: 0; gap: 16px;">
+
+      <div class="moat-item">
+        <div class="moat-icon">🇮🇱</div>
+        <div>
+          <h4>עברית Native</h4>
+          <p style="font-size: 15px; color: rgba(255,255,255,0.65);">לא תרגום – בנוי מהיסוד לעברית RTL ולהקשר ישראלי</p>
+        </div>
+      </div>
+
+      <div class="moat-item">
+        <div class="moat-icon">⚖️</div>
+        <div>
+          <h4>רגולציה ישראלית</h4>
+          <p style="font-size: 15px; color: rgba(255,255,255,0.65);">גפ"ן ומשרד החינוך – מחסום כניסה משמעותי לתחרות זרה</p>
+        </div>
+      </div>
+
+      <div class="moat-item">
+        <div class="moat-icon">🤝</div>
+        <div>
+          <h4>רשת קשרים</h4>
+          <p style="font-size: 15px; color: rgba(255,255,255,0.65);">קשרים ישירים עם בתי ספר, ניסיון מוכח בסדנאות AI</p>
+        </div>
+      </div>
+
+      <div class="moat-item">
+        <div class="moat-icon">🔀</div>
+        <div>
+          <h4>מודל היברידי</h4>
+          <p style="font-size: 15px; color: rgba(255,255,255,0.65);">סדנאות שמייצרות leads + מוצר SaaS = מתחרים לא יכולים לשכפל</p>
+        </div>
+      </div>
+
+      <div class="moat-item">
+        <div class="moat-icon">📚</div>
+        <div>
+          <h4>תכנית לימודים ישראלית</h4>
+          <p style="font-size: 15px; color: rgba(255,255,255,0.65);">מאגר ידע של בגרויות, ספרי לימוד, דרישות תפ"מ</p>
+        </div>
+      </div>
+
+      <div class="moat-item">
+        <div class="moat-icon">⚡</div>
+        <div>
+          <h4>First-Mover</h4>
+          <p style="font-size: 15px; color: rgba(255,255,255,0.65);">כל מורה שמשתמש יהפוך ל-advocate. Network effects מהיום הראשון</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <span class="slide-number">08 / 12</span>
+</section>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 9: Go-to-Market                          -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="slide-9" class="slide bg-9">
+  <div class="slide-inner">
+
+    <div class="tag">🚀 Go-to-Market</div>
+    <h2>PLG + סדנאות = <span class="highlight-green">מנוע צמיחה</span></h2>
+    <div class="divider"></div>
+
+    <div class="funnel-steps" style="margin-top: 32px;">
+      <div class="funnel-step" style="background: rgba(52,211,153,0.12); border-color: rgba(52,211,153,0.25);">
+        <h4 style="color: #6ee7b7;">Freemium</h4>
+        <p>5 שימושים/חודש. מורה מנסה, משתכנע.</p>
+      </div>
+      <div class="funnel-step">
+        <h4 style="color: #a5b4fc;">Plus</h4>
+        <p>שדרוג לשימוש בלתי מוגבל. 299 ₪/שנה.</p>
+      </div>
+      <div class="funnel-step">
+        <h4 style="color: #7dd3fc;">בית ספר</h4>
+        <p>מנהל רואה ערך, קונה לכל הצוות.</p>
+      </div>
+      <div class="funnel-step" style="background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.25);">
+        <h4 style="color: #fcd34d;">רשת</h4>
+        <p>Enterprise deal. 3,500–7,000 ₪/בי"ס.</p>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top: 32px;">
+
+      <div class="card-accent">
+        <h3 style="font-size: 20px; margin-bottom: 16px;">🎓 MoreTech כמנוע Leads</h3>
+        <p style="font-size: 16px; color: rgba(255,255,255,0.8); margin-bottom: 16px;">
+          סדנאות MoreTech ב-12-18 בתי ספר/שנה מייצרות:
+        </p>
+        <ul class="check-list" style="margin-top: 0;">
+          <li style="font-size: 15px;">הכנסה ישירה מהיום הראשון</li>
+          <li style="font-size: 15px;">פגישות עם מנהלים = leads פנימיים</li>
+          <li style="font-size: 15px;">מורים נחשפים לפלטפורמה בסדנה</li>
+          <li style="font-size: 15px;">Trust building לפני מכירת SaaS</li>
+        </ul>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+
+        <div class="card" style="padding: 20px;">
+          <h4 style="color: #6ee7b7; margin-bottom: 12px;">📅 לוח זמנים לכניסה לשוק</h4>
+          <div class="bar-container">
+            <div class="bar-label"><span>פברואר–מאי 2026</span><span>חלון מכירות מיטבי</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width: 100%; background: linear-gradient(90deg, #34d399, #06b6d4);"></div></div>
+          </div>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.55); margin-top: 10px;">
+            בתי ספר רוכשים שירותים לשנה הבאה בחודשים אלה. לא לפספס!
+          </p>
+        </div>
+
+        <div class="card" style="padding: 20px;">
+          <h4 style="color: #7dd3fc; margin-bottom: 12px;">⚖️ מתחת לסף מכרז</h4>
+          <p style="font-size: 15px; color: rgba(255,255,255,0.75);">
+            ב-250K ש"ח ומטה – בית ספר יכול לרכוש ישירות, ללא מכרז.
+            האסטרטגיה: <strong>עסקות קטנות מהירות × הרבה</strong>.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 20px;">
+          <h4 style="color: #a5b4fc; margin-bottom: 12px;">📣 ערוצי שיווק</h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="pill pill-purple">LinkedIn מורים</span>
+            <span class="pill pill-blue">קבוצות WhatsApp מורים</span>
+            <span class="pill pill-green">קהילות פדגוגיות</span>
+            <span class="pill pill-gold">אירועי EdTech</span>
+            <span class="pill pill-purple">PLG ויראלי</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <span class="slide-number">09 / 12</span>
+</section>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 10: תחזית פיננסית                        -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="slide-10" class="slide bg-10">
+  <div class="slide-inner">
+
+    <div class="tag">📊 תחזית פיננסית</div>
+    <h2>צמיחה עקבית – <span class="highlight-gold">Break-even שנה 2</span></h2>
+    <div class="divider"></div>
+
+    <div class="grid-4" style="margin-top: 32px;">
+      <div class="card" style="text-align: center; border-top: 3px solid #34d399;">
+        <div style="font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 8px;">שנה 1</div>
+        <div class="stat-number"><span class="highlight-green" style="font-size: 42px;">250K</span></div>
+        <div class="stat-label">ש"ח</div>
+        <div style="margin-top: 12px; font-size: 14px; color: rgba(255,255,255,0.55);">סדנאות בלבד</div>
+      </div>
+      <div class="card" style="text-align: center; border-top: 3px solid #818cf8;">
+        <div style="font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 8px;">שנה 2</div>
+        <div class="stat-number"><span class="highlight" style="font-size: 42px;">1.18M</span></div>
+        <div class="stat-label">ש"ח</div>
+        <div style="margin-top: 12px; font-size: 14px; color: rgba(255,255,255,0.55);">+ SaaS + רשת ראשונה</div>
+      </div>
+      <div class="card" style="text-align: center; border-top: 3px solid #f472b6;">
+        <div style="font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 8px;">שנה 3</div>
+        <div class="stat-number"><span class="highlight" style="font-size: 42px; background: linear-gradient(90deg, #f472b6, #c084fc); -webkit-background-clip:text;">2.6M</span></div>
+        <div class="stat-label">ש"ח</div>
+        <div style="margin-top: 12px; font-size: 14px; color: rgba(255,255,255,0.55);">3+ רשתות + PLG growth</div>
+      </div>
+      <div class="card" style="text-align: center; border-top: 3px solid #fbbf24;">
+        <div style="font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 8px;">שנה 4</div>
+        <div class="stat-number"><span class="highlight-gold" style="font-size: 42px;">4.8M</span></div>
+        <div class="stat-label">ש"ח</div>
+        <div style="margin-top: 12px; font-size: 14px; color: rgba(255,255,255,0.55);">15%+ מהשוק הישראלי</div>
+      </div>
+    </div>
+
+    <!-- Chart -->
+    <div style="margin-top: 36px; background: rgba(255,255,255,0.05); border-radius: 16px; padding: 28px; border: 1px solid rgba(255,255,255,0.1);">
+      <h4 style="font-size: 16px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">הכנסות שנתיות (ש"ח)</h4>
+      <div class="chart-bars">
+        <div class="chart-bar-wrap">
+          <span class="chart-bar-value">250K</span>
+          <div class="chart-bar" style="height: 5%; background: linear-gradient(180deg, #34d399, #059669);"></div>
+          <span class="chart-bar-label">שנה 1</span>
+        </div>
+        <div class="chart-bar-wrap">
+          <span class="chart-bar-value">1.18M</span>
+          <div class="chart-bar" style="height: 24%; background: linear-gradient(180deg, #818cf8, #4f46e5);"></div>
+          <span class="chart-bar-label">שנה 2</span>
+        </div>
+        <div class="chart-bar-wrap">
+          <span class="chart-bar-value">2.6M</span>
+          <div class="chart-bar" style="height: 54%; background: linear-gradient(180deg, #c084fc, #9333ea);"></div>
+          <span class="chart-bar-label">שנה 3</span>
+        </div>
+        <div class="chart-bar-wrap">
+          <span class="chart-bar-value">4.8M</span>
+          <div class="chart-bar" style="height: 100%; background: linear-gradient(180deg, #fbbf24, #d97706);"></div>
+          <span class="chart-bar-label">שנה 4</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top: 24px;">
+      <div class="card" style="text-align: center; padding: 18px;">
+        <div style="font-size: 28px; margin-bottom: 6px;">⚡</div>
+        <h4 style="font-size: 15px;">Break-even</h4>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.6);">סוף שנה 2</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 18px;">
+        <div style="font-size: 28px; margin-bottom: 6px;">🎯</div>
+        <h4 style="font-size: 15px;">יעד שנה 2</h4>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.6);">500+ מורים Plus, 20+ בתי ספר</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 18px;">
+        <div style="font-size: 28px; margin-bottom: 6px;">🏆</div>
+        <h4 style="font-size: 15px;">יעד שנה 4</h4>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.6);">15% מהשוק הישראלי</p>
+      </div>
+    </div>
+
+  </div>
+  <span class="slide-number">10 / 12</span>
+</section>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 11: הצוות                                -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="slide-11" class="slide bg-11">
+  <div class="slide-inner">
+
+    <div class="tag">👥 הצוות</div>
+    <h2>המייסד – <span class="highlight">הכלי הנדיר</span></h2>
+    <div class="divider"></div>
+
+    <div class="grid-2" style="margin-top: 36px; align-items: start;">
+
+      <div>
+        <!-- Founder Avatar Placeholder -->
+        <div style="display: flex; align-items: center; gap: 24px; margin-bottom: 32px;">
+          <div style="width: 100px; height: 100px; border-radius: 24px; background: linear-gradient(135deg, #818cf8, #c084fc, #f472b6); display: flex; align-items: center; justify-content: center; font-size: 42px; flex-shrink: 0; box-shadow: 0 12px 40px rgba(129,140,248,0.4);">
+            👤
+          </div>
+          <div>
+            <h3 style="font-size: 26px; margin-bottom: 4px;">אלעד יעקובוביץ׳</h3>
+            <p style="font-size: 16px; color: #a5b4fc; font-weight: 600;">מייסד ומנכ"ל – EduTech</p>
+          </div>
+        </div>
+
+        <ul class="check-list">
+          <li>מפתח Full-Stack – Next.js, React, TypeScript, AI APIs</li>
+          <li>מדריך טכנולוגי מנוסה – סדנאות AI למורים ומנהלים</li>
+          <li>ניסיון ישיר עם מערכת החינוך הישראלית</li>
+          <li><strong>440+ זוגות</strong> כמנחה קבוצות – כישורי facilitation ייחודיים</li>
+          <li>ניסיון מוכח בהכשרת מורים לעידן ה-AI</li>
+          <li>מייסד HiTechKids – סדנאות AI לילדים</li>
+        </ul>
+
+      </div>
+
+      <div>
+        <h3 style="font-size: 20px; margin-bottom: 20px;">🎯 למה זה המייסד המושלם?</h3>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+
+          <div class="card" style="padding: 18px; display: flex; gap: 14px; align-items: flex-start;">
+            <div style="font-size: 28px; flex-shrink: 0;">🔧</div>
+            <div>
+              <h4>יכול לבנות בעצמו</h4>
+              <p style="font-size: 15px; color: rgba(255,255,255,0.65);">Full-Stack developer עם ניסיון ב-AI APIs – לא תלוי בצוות פיתוח חיצוני לסקייל ה-MVP</p>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 18px; display: flex; gap: 14px; align-items: flex-start;">
+            <div style="font-size: 28px; flex-shrink: 0;">🏫</div>
+            <div>
+              <h4>מכיר את הלקוח מבפנים</h4>
+              <p style="font-size: 15px; color: rgba(255,255,255,0.65);">עבד ישירות עם מורים, מנהלים ורשתות חינוך – הבעיה היא אמיתית מניסיון אישי</p>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 18px; display: flex; gap: 14px; align-items: flex-start;">
+            <div style="font-size: 28px; flex-shrink: 0;">💼</div>
+            <div>
+              <h4>יכול למכור</h4>
+              <p style="font-size: 15px; color: rgba(255,255,255,0.65);">ניסיון בהצגת סדנאות ומכירת תכניות הכשרה לבתי ספר – מכיר את שפת הרכש החינוכי</p>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 18px;">
+            <h4 style="color: #fcd34d; margin-bottom: 8px;">📋 גיוס עתידי</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
+              <span class="pill pill-purple">Product Manager (שנה 1)</span>
+              <span class="pill pill-blue">מפתח נוסף (שנה 2)</span>
+              <span class="pill pill-gold">מנהל מכירות (שנה 2)</span>
+              <span class="pill pill-green">CS Manager (שנה 3)</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <span class="slide-number">11 / 12</span>
+</section>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 12: CTA                                  -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="slide-12" class="slide bg-12">
+  <div class="slide-inner" style="text-align: center;">
+
+    <div class="tag">📞 בואו נדבר</div>
+
+    <h1 style="margin-bottom: 12px;">
+      מצטרפים ל<span class="highlight">מהפכת</span> ה-AI<br />בחינוך הישראלי?
+    </h1>
+
+    <div class="divider" style="margin: 28px auto;"></div>
+
+    <!-- Beta offer -->
+    <div style="background: linear-gradient(135deg, rgba(129,140,248,0.15), rgba(192,132,252,0.12)); border: 1px solid rgba(129,140,248,0.35); border-radius: 24px; padding: 36px 48px; max-width: 700px; margin: 0 auto 40px; position: relative;">
+
+      <div style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #818cf8, #c084fc); color: #fff; padding: 6px 24px; border-radius: 20px; font-size: 14px; font-weight: 700; white-space: nowrap;">
+        🎉 הצעה מיוחדת – בטא
+      </div>
+
+      <h2 style="font-size: clamp(22px, 3vw, 38px); margin-bottom: 16px; color: #fff;">
+        50 מורים בגרסת בטא
+      </h2>
+      <p style="font-size: 20px; font-weight: 700; color: #6ee7b7; margin-bottom: 8px;">
+        חינם לחלוטין
+      </p>
+      <p style="font-size: 17px; color: rgba(255,255,255,0.75);">
+        גישה מלאה לכל כלי ה-AI · תמיכה ישירה ממני · Feedback שיצור את המוצר
+      </p>
+
+    </div>
+
+    <!-- Next steps -->
+    <div class="grid-3" style="max-width: 800px; margin: 0 auto 40px;">
+
+      <div class="card" style="text-align: center; padding: 22px;">
+        <div style="font-size: 32px; margin-bottom: 10px;">1️⃣</div>
+        <h4 style="font-size: 17px;">שיחת היכרות</h4>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.6);">30 דק׳. נבין יחד את הצרכים שלכם.</p>
+      </div>
+
+      <div class="card" style="text-align: center; padding: 22px;">
+        <div style="font-size: 32px; margin-bottom: 10px;">2️⃣</div>
+        <h4 style="font-size: 17px;">דמו חי</h4>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.6);">נחזיר 5 שעות עבודה בשעה אחת.</p>
+      </div>
+
+      <div class="card" style="text-align: center; padding: 22px;">
+        <div style="font-size: 32px; margin-bottom: 10px;">3️⃣</div>
+        <h4 style="font-size: 17px;">פיילוט בבית הספר שלכם</h4>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.6);">חינם. ללא סיכון. עם ליווי מלא.</p>
+      </div>
+
+    </div>
+
+    <!-- Contact -->
+    <div style="margin-bottom: 32px;">
+      <a href="mailto:elad@hiteclearning.co.il" class="btn-primary">
+        📧 elad@hiteclearning.co.il
+      </a>
+      <a href="#slide-1" class="btn-outline">
+        חזרה לתחילה
+      </a>
+    </div>
+
+    <!-- Social proof -->
+    <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 16px;">
+      <div style="text-align: center;">
+        <div style="font-size: 24px; font-weight: 900; color: #818cf8;">180K+</div>
+        <div style="font-size: 13px; color: rgba(255,255,255,0.5);">מורים בישראל</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 24px; font-weight: 900; color: #34d399;">$1.2B</div>
+        <div style="font-size: 13px; color: rgba(255,255,255,0.5);">שוק EdTech ישראלי</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 24px; font-weight: 900; color: #f472b6;">0</div>
+        <div style="font-size: 13px; color: rgba(255,255,255,0.5);">מתחרים בעברית</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 24px; font-weight: 900; color: #fbbf24;">2026</div>
+        <div style="font-size: 13px; color: rgba(255,255,255,0.5);">החלון הפתוח</div>
+      </div>
+    </div>
+
+    <p style="margin-top: 48px; font-size: 14px; color: rgba(255,255,255,0.3);">
+      EduTech · MoreTech · HiTechKids · © 2026 אלעד יעקובוביץ׳
+    </p>
+
+  </div>
+  <span class="slide-number">12 / 12</span>
+</section>
+
+
+<!-- ─── Navigation JS ─── -->
+<script>
+  // Active nav dot on scroll
+  const slides = document.querySelectorAll('.slide');
+  const dots   = document.querySelectorAll('.nav-dot');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        dots.forEach(d => d.classList.remove('active'));
+        const idx = [...slides].indexOf(entry.target);
+        if (dots[idx]) dots[idx].classList.add('active');
+      }
+    });
+  }, { threshold: 0.5 });
+
+  slides.forEach(s => observer.observe(s));
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    const current = [...slides].find(s => {
+      const rect = s.getBoundingClientRect();
+      return rect.top >= -100 && rect.top < window.innerHeight / 2;
+    });
+    const idx = [...slides].indexOf(current);
+
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === 'PageDown') {
+      e.preventDefault();
+      const next = slides[idx + 1];
+      if (next) next.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (e.key === 'ArrowUp' || e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      e.preventDefault();
+      const prev = slides[idx - 1];
+      if (prev) prev.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+</script>
+
+</body>
+</html>

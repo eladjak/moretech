@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduTech — סקירה מלאה והנחיות פעולה | מרץ 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;900&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Heebo', sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.8; }
+
+  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 40%, #1a1a3e 100%); padding: 60px 40px 50px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%); border-radius: 50%; }
+  .hero::after { content: ''; position: absolute; bottom: -100px; left: -60px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(168,85,247,0.1) 0%, transparent 70%); border-radius: 50%; }
+  .hero h1 { font-size: 2.8em; font-weight: 900; background: linear-gradient(135deg, #60a5fa, #a78bfa, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
+  .hero .subtitle { font-size: 1.3em; color: #94a3b8; font-weight: 300; }
+  .hero .date { font-size: 0.9em; color: #64748b; margin-top: 12px; }
+  .hero .badge { display: inline-block; margin-top: 15px; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; padding: 6px 20px; border-radius: 20px; font-size: 0.85em; font-weight: 600; }
+
+  .nav { background: #1e293b; border-bottom: 1px solid #334155; padding: 0 40px; position: sticky; top: 0; z-index: 100; overflow-x: auto; white-space: nowrap; }
+  .nav a { display: inline-block; padding: 14px 18px; color: #94a3b8; text-decoration: none; font-size: 0.85em; font-weight: 500; transition: all 0.2s; border-bottom: 2px solid transparent; }
+  .nav a:hover { color: #60a5fa; border-bottom-color: #60a5fa; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 40px 30px; }
+  .section { margin-bottom: 50px; scroll-margin-top: 60px; }
+  h2 { font-size: 1.7em; font-weight: 700; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #334155; display: flex; align-items: center; gap: 12px; }
+  h3 { font-size: 1.15em; font-weight: 600; color: #cbd5e1; margin: 25px 0 12px; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0; }
+  .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 20px; transition: all 0.2s; }
+  .card:hover { border-color: #475569; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+  .card .card-icon { font-size: 2em; margin-bottom: 10px; }
+  .card h4 { font-size: 1.05em; font-weight: 600; color: #f1f5f9; margin-bottom: 6px; }
+  .card p { font-size: 0.9em; color: #94a3b8; line-height: 1.6; }
+  .card .status { display: inline-block; padding: 3px 10px; border-radius: 10px; font-size: 0.75em; font-weight: 600; margin-top: 10px; }
+  .status-done { background: #166534; color: #86efac; }
+  .status-ready { background: #1e3a5f; color: #93c5fd; }
+  .status-todo { background: #713f12; color: #fde68a; }
+  .status-critical { background: #7f1d1d; color: #fca5a5; }
+
+  .steps { counter-reset: step; margin: 20px 0; }
+  .step { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; position: relative; counter-increment: step; }
+  .step::before { content: counter(step); position: absolute; right: -12px; top: 20px; width: 32px; height: 32px; background: linear-gradient(135deg, #3b82f6, #6366f1); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9em; }
+  .step h4 { font-size: 1em; font-weight: 600; color: #f1f5f9; margin-bottom: 6px; padding-right: 28px; }
+  .step p { font-size: 0.9em; color: #94a3b8; }
+  .step .detail { background: #0f172a; border-radius: 8px; padding: 14px 16px; margin-top: 12px; font-size: 0.85em; color: #cbd5e1; line-height: 2; }
+  .step code { background: #334155; padding: 2px 8px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 0.9em; direction: ltr; display: inline-block; color: #93c5fd; }
+  .step .time { display: inline-block; background: #1a1a3e; color: #a78bfa; padding: 2px 10px; border-radius: 8px; font-size: 0.8em; margin-top: 8px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9em; }
+  th { background: #334155; color: #e2e8f0; padding: 10px 14px; text-align: right; font-weight: 600; }
+  td { padding: 10px 14px; border-bottom: 1px solid #1e293b; }
+  tr:nth-child(even) { background: #1e293b40; }
+
+  .callout { border-radius: 10px; padding: 16px 20px; margin: 16px 0; font-size: 0.92em; }
+  .callout-info { background: #172554; border-right: 4px solid #3b82f6; }
+  .callout-success { background: #14532d; border-right: 4px solid #22c55e; }
+  .callout-warning { background: #451a03; border-right: 4px solid #f59e0b; }
+  .callout-urgent { background: #450a0a; border-right: 4px solid #ef4444; }
+  .callout strong { color: #f1f5f9; }
+
+  .progress-bar { background: #334155; border-radius: 8px; height: 10px; margin: 10px 0 5px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 8px; background: linear-gradient(90deg, #3b82f6, #6366f1); }
+  .progress-label { font-size: 0.8em; color: #94a3b8; display: flex; justify-content: space-between; }
+
+  .file-tree { background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 16px 20px; font-family: 'Courier New', monospace; font-size: 0.85em; direction: ltr; text-align: left; color: #94a3b8; line-height: 1.8; margin: 12px 0; }
+  .file-tree .new { color: #4ade80; }
+  .file-tree .folder { color: #60a5fa; }
+  .file-tree .important { color: #fbbf24; }
+
+  .checklist { list-style: none; padding: 0; margin: 12px 0; }
+  .checklist li { padding: 8px 12px 8px 0; border-bottom: 1px solid #1e293b; display: flex; align-items: flex-start; gap: 10px; font-size: 0.92em; }
+  .checklist li::before { content: '\2610'; color: #94a3b8; font-size: 1.1em; flex-shrink: 0; }
+  .checklist li.done::before { content: '\2705'; }
+
+  .email-preview { background: white; color: #1a1a1a; border-radius: 10px; padding: 24px; margin: 16px 0; direction: rtl; font-size: 0.92em; line-height: 1.8; border: 1px solid #e5e7eb; }
+  .email-preview .ep-subject { background: #f3f4f6; padding: 10px 16px; border-radius: 8px; margin-bottom: 16px; font-weight: 600; }
+  .email-preview strong { color: #1e3a5f; }
+
+  .post-preview { background: white; color: #1a1a1a; border-radius: 10px; padding: 20px; margin: 16px 0; direction: rtl; font-size: 0.92em; line-height: 1.8; border: 1px solid #e5e7eb; }
+
+  .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 16px 0; }
+  .stat-card { background: linear-gradient(135deg, #1e293b, #1a1a3e); border: 1px solid #334155; border-radius: 10px; padding: 16px; text-align: center; }
+  .stat-card .val { font-size: 1.8em; font-weight: 900; background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .stat-card .lbl { font-size: 0.78em; color: #94a3b8; margin-top: 4px; }
+
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px; }
+    .hero h1 { font-size: 2em; }
+    .container { padding: 20px 16px; }
+    .step::before { right: 8px; top: 20px; width: 26px; height: 26px; font-size: 0.8em; }
+    .cards { grid-template-columns: 1fr; }
+  }
+  @media print {
+    body { background: white; color: #1a1a1a; }
+    .nav { display: none; }
+    .card, .step, .callout { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>EduTech — סקירת פרויקט</h1>
+  <div class="subtitle">ה-MagicSchool של ישראל — כלי AI בעברית למורים</div>
+  <div class="date">10 במרץ 2026 | נוצר אוטומטית ע"י Claude Code</div>
+  <div class="badge">שלב בנייה פעיל — MVP מוכן</div>
+</div>
+
+<div class="nav">
+  <a href="#overview">סקירה</a>
+  <a href="#deliverables">תוצרים</a>
+  <a href="#platform">הפלטפורמה</a>
+  <a href="#action-plan">תוכנית פעולה</a>
+  <a href="#domain">דומיין</a>
+  <a href="#supabase">Supabase</a>
+  <a href="#deploy">פריסה</a>
+  <a href="#outreach">MindCET</a>
+  <a href="#beta">גיוס בטא</a>
+  <a href="#sandbox">AI Sandbox</a>
+  <a href="#next-tools">כלים הבאים</a>
+  <a href="#files">קבצים</a>
+</div>
+
+<div class="container">
+
+<!-- OVERVIEW -->
+<div class="section" id="overview">
+<h2><span class="icon">📊</span> סקירה כללית</h2>
+
+<div class="stats-row">
+  <div class="stat-card"><div class="val">6/9</div><div class="lbl">משימות הושלמו</div></div>
+  <div class="stat-card"><div class="val">3</div><div class="lbl">קבצי קוד חדשים</div></div>
+  <div class="stat-card"><div class="val">4</div><div class="lbl">מסמכים עסקיים</div></div>
+  <div class="stat-card"><div class="val">0</div><div class="lbl">שגיאות TypeScript</div></div>
+  <div class="stat-card"><div class="val">$45M</div><div class="lbl">שוק MagicSchool (בלי עברית)</div></div>
+  <div class="stat-card"><div class="val">50</div><div class="lbl">מורים יעד לבטא</div></div>
+</div>
+
+<h3>התקדמות כללית</h3>
+<div class="progress-bar"><div class="progress-fill" style="width: 55%"></div></div>
+<div class="progress-label"><span>אסטרטגיה + MVP + חומרים</span><span>55%</span></div>
+
+<div class="callout callout-info">
+<strong>איפה אנחנו:</strong> הפיבוט האסטרטגי הושלם. הפלטפורמה בנויה (Next.js + AI). מצגת, אימיילים, ואפליקציית סנדבוקס מוכנים. עכשיו צריך: דומיין &rarr; Supabase &rarr; פריסה &rarr; גיוס בטא.
+</div>
+</div>
+
+<!-- DELIVERABLES -->
+<div class="section" id="deliverables">
+<h2><span class="icon">📦</span> מה מוכן</h2>
+<div class="cards">
+  <div class="card">
+    <div class="card-icon">🌐</div>
+    <h4>דף נחיתה EduTech</h4>
+    <p>עמוד בית בעברית עם Hero, נתוני שוק, 5 כלי AI, טופס הרשמה ל-50 מורים ראשונים.</p>
+    <span class="status status-done">בוצע</span>
+  </div>
+  <div class="card">
+    <div class="card-icon">🤖</div>
+    <h4>מחולל שיעורים AI</h4>
+    <p>כלי AI ראשון — בוחרים מקצוע, כיתה, נושא ומקבלים תכנית שיעור מלאה streaming בעברית.</p>
+    <span class="status status-done">בוצע</span>
+  </div>
+  <div class="card">
+    <div class="card-icon">📊</div>
+    <h4>מצגת EduTech (12 שקפים)</h4>
+    <p>פיץ' דק מקצועי — בעיה, הזדמנות, פתרון, מודל עסקי, תחזית פיננסית, CTA.</p>
+    <span class="status status-done">בוצע</span>
+  </div>
+  <div class="card">
+    <div class="card-icon">📧</div>
+    <h4>אימייל ל-MindCET</h4>
+    <p>מייל מקצועי בעברית לפתיחת שיתוף פעולה. 15 שורות, טון חם ומדויק.</p>
+    <span class="status status-ready">מוכן לשליחה</span>
+  </div>
+  <div class="card">
+    <div class="card-icon">👥</div>
+    <h4>אסטרטגיית גיוס בטא</h4>
+    <p>תוכנית ל-50 מורים ב-3 שבועות — 6 קבוצות פייסבוק, ווטסאפ, לינקדאין + פוסט מוכן.</p>
+    <span class="status status-ready">מוכן לפעולה</span>
+  </div>
+  <div class="card">
+    <div class="card-icon">🏛️</div>
+    <h4>הגשת AI Sandbox</h4>
+    <p>טיוטה להגשה לרשות החדשנות — 10M ש"ח למימון פיילוט AI בחינוך.</p>
+    <span class="status status-ready">טיוטה מוכנה</span>
+  </div>
+  <div class="card">
+    <div class="card-icon">📋</div>
+    <h4>תוכנית אסטרטגית 2026</h4>
+    <p>מסמך מקיף: חזון, שוק, תחרות, מודל הכנסות, GTM, KPIs ל-24 חודש.</p>
+    <span class="status status-done">בוצע</span>
+  </div>
+  <div class="card">
+    <div class="card-icon">🔍</div>
+    <h4>מחקר שוק + ניתוח תחרותי</h4>
+    <p>$1.2B שוק EdTech ישראלי, 13 מתחרים. אף אחד לא עושה AI בעברית למורים.</p>
+    <span class="status status-done">בוצע</span>
+  </div>
+</div>
+</div>
+
+<!-- PLATFORM -->
+<div class="section" id="platform">
+<h2><span class="icon">⚡</span> מבנה הפלטפורמה</h2>
+<div class="file-tree">
+<span class="folder">platform/</span>
+├── <span class="folder">src/</span>
+│   ├── <span class="folder">app/</span>
+│   │   ├── <span class="new">page.tsx</span>                  &larr; דף נחיתה (Hebrew RTL)
+│   │   ├── layout.tsx               &larr; Layout + Heebo font
+│   │   ├── <span class="folder">tools/</span>
+│   │   │   └── <span class="folder">lesson-planner/</span>
+│   │   │       └── <span class="new">page.tsx</span>          &larr; מחולל שיעורים AI
+│   │   └── <span class="folder">api/</span>
+│   │       └── <span class="folder">generate-lesson/</span>
+│   │           └── <span class="new">route.ts</span>          &larr; API (Claude/Gemini streaming)
+│   ├── <span class="folder">components/ui/</span>             &larr; shadcn/ui components
+│   └── <span class="folder">lib/</span>
+│       ├── <span class="new">supabase.ts</span>               &larr; Supabase client
+│       └── utils.ts
+├── <span class="important">.env.local.example</span>           &larr; Environment variables template
+├── package.json
+└── tsconfig.json
+</div>
+
+<h3>Tech Stack</h3>
+<table>
+  <tr><th>שכבה</th><th>טכנולוגיה</th><th>סטטוס</th></tr>
+  <tr><td>Framework</td><td>Next.js 16 + React 19</td><td><span class="status status-done">מותקן</span></td></tr>
+  <tr><td>שפה</td><td>TypeScript (0 errors)</td><td><span class="status status-done">מותקן</span></td></tr>
+  <tr><td>UI</td><td>shadcn/ui + Tailwind CSS 4</td><td><span class="status status-done">מותקן</span></td></tr>
+  <tr><td>AI</td><td>Vercel AI SDK + Claude + Gemini</td><td><span class="status status-done">מותקן</span></td></tr>
+  <tr><td>Auth</td><td>Supabase Auth</td><td><span class="status status-todo">צריך הגדרה</span></td></tr>
+  <tr><td>Database</td><td>Supabase (PostgreSQL)</td><td><span class="status status-todo">צריך הגדרה</span></td></tr>
+  <tr><td>Hosting</td><td>Vercel</td><td><span class="status status-todo">צריך פריסה</span></td></tr>
+  <tr><td>Domain</td><td>edutech.co.il</td><td><span class="status status-critical">צריך רכישה</span></td></tr>
+</table>
+</div>
+
+<!-- ACTION PLAN -->
+<div class="section" id="action-plan">
+<h2><span class="icon">🗺️</span> תוכנית פעולה — שלב אחר שלב</h2>
+
+<div class="callout callout-warning">
+<strong>סדר עדיפויות:</strong> הפעולות מסודרות לפי סדר — כל שלב תלוי בקודם. עקוב מלמעלה למטה.
+</div>
+
+<!-- DOMAIN -->
+<div id="domain">
+<h3>🔴 שלב 1: רכישת דומיין (יום 1)</h3>
+<div class="steps">
+<div class="step">
+  <h4>רכוש <code>edutech.co.il</code></h4>
+  <p>זה הדומיין המרכזי של הפלטפורמה. בלעדיו אי אפשר להשיק.</p>
+  <div class="detail">
+    <strong>אפשרות א' — Cloudflare (מומלץ):</strong><br>
+    1. היכנס ל-<code>dash.cloudflare.com</code><br>
+    2. תפריט שמאלי &rarr; <strong>"Register Domains"</strong><br>
+    3. חפש <code>edutech.co.il</code><br>
+    4. לחץ <strong>Purchase</strong> &rarr; הזן פרטי תשלום<br>
+    5. מחיר: ~₪50/שנה<br><br>
+    <strong>אפשרות ב' — Box.co.il (אם Cloudflare לא תומך .co.il):</strong><br>
+    1. היכנס ל-<code>box.co.il</code><br>
+    2. חפש <code>edutech.co.il</code> &rarr; רכוש<br>
+    3. בהמשך נעביר ל-Cloudflare DNS
+  </div>
+  <span class="time">10 דקות</span>
+</div>
+<div class="step">
+  <h4>הגדר DNS ב-Cloudflare</h4>
+  <p>אם רכשת ב-Cloudflare — ה-DNS כבר מוגדר. אם ב-Box — שנה nameservers.</p>
+  <div class="detail">
+    <strong>אם רכשת ב-Box:</strong><br>
+    1. ב-Cloudflare: <strong>"Add Site"</strong> &rarr; הזן <code>edutech.co.il</code><br>
+    2. Cloudflare ייתן 2 nameservers<br>
+    3. ב-Box: הגדרות דומיין &rarr; שנה nameservers לאלה של Cloudflare<br>
+    4. חכה עד 24 שעות (בדרך כלל 1-2 שעות)
+  </div>
+  <span class="time">15 דקות + המתנה</span>
+</div>
+</div>
+</div>
+
+<!-- SUPABASE -->
+<div id="supabase">
+<h3>🟡 שלב 2: הקמת Supabase (יום 1-2)</h3>
+<div class="steps">
+<div class="step">
+  <h4>צור פרויקט Supabase חדש</h4>
+  <p>Supabase מספק Auth + Database + Storage בחינם (עד 50K MAU).</p>
+  <div class="detail">
+    1. היכנס ל-<code>supabase.com/dashboard</code><br>
+    2. לחץ <strong>"New Project"</strong><br>
+    3. שם: <code>edutech-platform</code><br>
+    4. סיסמת DB: שמור במקום בטוח<br>
+    5. Region: <strong>eu-central-1</strong> (הכי קרוב לישראל)<br>
+    6. לחץ <strong>"Create new project"</strong> &rarr; חכה 2 דקות
+  </div>
+  <span class="time">5 דקות</span>
+</div>
+<div class="step">
+  <h4>העתק מפתחות לפרויקט</h4>
+  <p>צריך URL + anon key כדי שהאפליקציה תתחבר ל-Supabase.</p>
+  <div class="detail">
+    1. ב-Supabase Dashboard: <strong>Settings &rarr; API</strong><br>
+    2. העתק: <code>Project URL</code> + <code>anon / public key</code><br>
+    3. צור קובץ <code>platform/.env.local</code>:<br><br>
+    <code>NEXT_PUBLIC_SUPABASE_URL=https://xxxx.supabase.co</code><br>
+    <code>NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGci...</code>
+  </div>
+  <span class="time">3 דקות</span>
+</div>
+<div class="step">
+  <h4>צור טבלת beta_signups</h4>
+  <p>כדי לשמור הרשמות מטופס הבטא.</p>
+  <div class="detail">
+    ב-Supabase: <strong>SQL Editor</strong> &rarr; הרץ:<br><br>
+    <code>CREATE TABLE beta_signups (</code><br>
+    <code>&nbsp;&nbsp;id UUID DEFAULT gen_random_uuid() PRIMARY KEY,</code><br>
+    <code>&nbsp;&nbsp;full_name TEXT NOT NULL,</code><br>
+    <code>&nbsp;&nbsp;email TEXT NOT NULL UNIQUE,</code><br>
+    <code>&nbsp;&nbsp;subject TEXT,</code><br>
+    <code>&nbsp;&nbsp;grade_level TEXT,</code><br>
+    <code>&nbsp;&nbsp;school TEXT,</code><br>
+    <code>&nbsp;&nbsp;created_at TIMESTAMPTZ DEFAULT now()</code><br>
+    <code>);</code><br><br>
+    <code>ALTER TABLE beta_signups ENABLE ROW LEVEL SECURITY;</code><br>
+    <code>CREATE POLICY "Allow inserts" ON beta_signups</code><br>
+    <code>&nbsp;&nbsp;FOR INSERT WITH CHECK (true);</code>
+  </div>
+  <span class="time">5 דקות</span>
+</div>
+</div>
+</div>
+
+<!-- API KEYS -->
+<h3>🟡 שלב 3: מפתחות AI API (יום 2)</h3>
+<div class="steps">
+<div class="step">
+  <h4>הגדר מפתח Anthropic או Google</h4>
+  <p>כדי שמחולל השיעורים יעבוד, צריך לפחות מפתח אחד.</p>
+  <div class="detail">
+    <strong>אפשרות א' — Anthropic (Claude, מומלץ):</strong><br>
+    1. <code>console.anthropic.com</code> &rarr; API Keys &rarr; Create Key<br>
+    2. הוסף ל-<code>.env.local</code>: <code>ANTHROPIC_API_KEY=sk-ant-...</code><br><br>
+    <strong>אפשרות ב' — Google (Gemini, חינם):</strong><br>
+    1. <code>aistudio.google.com/apikey</code> &rarr; Create API Key<br>
+    2. הוסף ל-<code>.env.local</code>: <code>GOOGLE_GENERATIVE_AI_API_KEY=AIza...</code>
+  </div>
+  <span class="time">5 דקות</span>
+</div>
+<div class="step">
+  <h4>בדוק שהמחולל עובד מקומית</h4>
+  <p>לפני שמפרסים — וודא שהכל עובד.</p>
+  <div class="detail">
+    1. פתח טרמינל בתיקיית <code>platform/</code><br>
+    2. הרץ: <code>npm run dev</code><br>
+    3. פתח <code>http://localhost:3000</code> &rarr; בדוק דף נחיתה<br>
+    4. לחץ "נסו את מחולל השיעורים"<br>
+    5. בחר מקצוע + כיתה + נושא &rarr; לחץ "צרו תכנית שיעור"<br>
+    6. וודא שתכנית שיעור מופיעה ב-streaming בעברית
+  </div>
+  <span class="time">10 דקות</span>
+</div>
+</div>
+
+<!-- DEPLOY -->
+<div id="deploy">
+<h3>🟢 שלב 4: פריסה ב-Vercel (יום 2-3)</h3>
+<div class="steps">
+<div class="step">
+  <h4>פרוס ב-Vercel</h4>
+  <p>Vercel = הבית של Next.js. פריסה אוטומטית מ-GitHub.</p>
+  <div class="detail">
+    1. <code>vercel.com/dashboard</code> &rarr; <strong>"Add New" &rarr; "Project"</strong><br>
+    2. חבר את הריפו <code>eladjak/edutech</code><br>
+    3. <strong>Root Directory:</strong> הגדר ל-<code>platform</code><br>
+    4. <strong>Environment Variables:</strong> הוסף את כל המפתחות:<br>
+    &nbsp;&nbsp;&bull; <code>NEXT_PUBLIC_SUPABASE_URL</code><br>
+    &nbsp;&nbsp;&bull; <code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code><br>
+    &nbsp;&nbsp;&bull; <code>ANTHROPIC_API_KEY</code> (או <code>GOOGLE_GENERATIVE_AI_API_KEY</code>)<br>
+    5. לחץ <strong>"Deploy"</strong> &rarr; חכה ~1-2 דקות
+  </div>
+  <span class="time">10 דקות</span>
+</div>
+<div class="step">
+  <h4>חבר דומיין ל-Vercel</h4>
+  <p>אחרי שהדומיין נרכש וה-DNS ב-Cloudflare.</p>
+  <div class="detail">
+    1. ב-Vercel: <strong>Project &rarr; Settings &rarr; Domains</strong><br>
+    2. הזן: <code>edutech.co.il</code> &rarr; <strong>Add</strong><br>
+    3. Vercel ייתן הוראות DNS:<br>
+    &nbsp;&nbsp;&bull; <code>A</code> record &rarr; <code>76.76.21.21</code><br>
+    &nbsp;&nbsp;&bull; <code>CNAME</code>: <code>www</code> &rarr; <code>cname.vercel-dns.com</code><br>
+    4. ב-Cloudflare: <strong>DNS &rarr; Add Record</strong> &rarr; הוסף את שתי הרשומות<br>
+    5. SSL אוטומטי
+  </div>
+  <span class="time">15 דקות</span>
+</div>
+</div>
+</div>
+
+<!-- OUTREACH -->
+<div id="outreach">
+<h3>🔵 שלב 5: פנייה ל-MindCET (יום 3)</h3>
+<div class="steps">
+<div class="step">
+  <h4>שלח את האימייל ל-MindCET</h4>
+  <p>האימייל מוכן. צריך רק לשלוח.</p>
+  <div class="detail">
+    <strong>נמען:</strong> חפש באתר <code>mindcet.org</code> &rarr; צור קשר / info@mindcet.org<br>
+    <strong>נושא:</strong> "כלי AI בעברית למורים - פנייה לשיתוף פעולה עם MindCET"
+  </div>
+</div>
+</div>
+
+<h4>תצוגה מקדימה של האימייל:</h4>
+<div class="email-preview">
+  <div class="ep-subject">נושא: כלי AI בעברית למורים - פנייה לשיתוף פעולה עם MindCET</div>
+  שלום,<br><br>
+  אני אלעד יעקובוביץ', יזם EdTech עם ניסיון בהדרכת סדנאות AI ועולם הטכנולוגיה לצוותי חינוך.<br><br>
+  פניתי אליכם כי מיינדסט הייחודי של MindCET — חיבור בין חדשנות פדגוגית לטכנולוגיה — תואם בדיוק את מה שאנחנו בונים.<br><br>
+  <strong>מה אנחנו בונים:</strong><br>
+  פלטפורמת AI ייעודית למורים ישראלים — כלים בעברית מלאה לבניית שיעורים, הערכות, רובריקות וחומרי לימוד. בגדול: MagicSchool לישראל.<br><br>
+  <strong>הפער בשוק:</strong><br>
+  MagicSchool מגלגלת $45 מיליון הכנסה ומשרתת 6 מיליון מורים — אפס מהם בישראל, כי אין תמיכה בעברית.<br><br>
+  <strong>למה אני פונה אליכם:</strong><br>
+  MindCET מכירים את המורים, את בתי הספר, ואת האקוסיסטם. לי יש את הפתרון הטכנולוגי ואת הידע בשטח מסדנאות. יחד נוכל לבנות משהו שמשנה את חוויית ההוראה בישראל.<br><br>
+  אשמח לפגישת היכרות קצרה — 30 דקות.<br><br>
+  תודה רבה,<br>
+  אלעד יעקובוביץ'<br>
+  EduTech / MoreTech
+</div>
+</div>
+
+<!-- BETA -->
+<div id="beta">
+<h3>🔵 שלב 6: גיוס 50 מורים לבטא (שבועות 1-3)</h3>
+<div class="steps">
+<div class="step">
+  <h4>שבוע 1 — פוסט ראשון</h4>
+  <p>פרסם ב-3-4 קבוצות פייסבוק + לינקדאין + ווטסאפ אישי.</p>
+  <div class="detail">
+    <strong>קבוצות פייסבוק (לפי עדיפות):</strong><br>
+    1. מורים ברשת (~70K עוקבים)<br>
+    2. מורים לתיכון - ישראל (~25K)<br>
+    3. מורים לאנגלית בישראל (~20K)<br>
+    4. מורים ליזמות ולחדשנות (~15K)<br>
+    5. מורים לחינוך מיוחד (~12K)<br>
+    6. מנהלים ומפקחים - חינוך (~8K)
+  </div>
+  <span class="time">2-3 שעות עבודה</span>
+</div>
+<div class="step">
+  <h4>הפוסט המוכן לפרסום</h4>
+  <p>הכל כתוב — העתק, הוסף קישור לאתר, פרסם.</p>
+</div>
+</div>
+
+<div class="post-preview">
+<strong>מורים — יש לי משהו שבניתי בשבילכם</strong><br><br>
+עשיתי עשרות סדנאות עם מורים ושמעתי את אותו דבר שוב ושוב:<br>
+"ChatGPT זה מגניב אבל הכל באנגלית. קשה. לא מתחבר."<br><br>
+אז בניתי כלי AI בעברית מלאה — רק למורים:<br>
+- בניית שיעורים ויחידות דידקטיות<br>
+- הערכות ורובריקות<br>
+- משוב מותאם לתלמידים<br>
+- התאמה לרמות שונות בכיתה<br><br>
+עכשיו מחפש <strong>50 מורים לקבוצת הבטא.</strong><br>
+<strong>לחלוטין חינם. לתמיד.</strong><br><br>
+אם אתם הראשונים — תקבלו גישת פרימיום לנצח + שמכם באתר כ"מייסדים".<br><br>
+להרשמה (שם, מייל, בית ספר, מקצוע, כיתה): <strong>[קישור לאתר]</strong><br><br>
+מי בפנים?
+</div>
+
+<div class="steps">
+<div class="step">
+  <h4>שבוע 2 — מעקב ודחיפה</h4>
+  <p>תגובה לכל פנייה תוך 2 שעות. פוסט שני: "10 מורים כבר הצטרפו". גיוס ממוקד לתחומים חסרים.</p>
+  <span class="time">שעה ביום</span>
+</div>
+<div class="step">
+  <h4>שבוע 3 — סגירה</h4>
+  <p>דחיפה אחרונה: "נשארו 10 מקומות". סגירת 50 הרשמות. אימייל קבלה לכל נרשם.</p>
+  <span class="time">שעה ביום</span>
+</div>
+</div>
+
+<h4>תמריצים למשתמשי בטא</h4>
+<table>
+  <tr><th>תמריץ</th><th>פרטים</th></tr>
+  <tr><td>גישת פרימיום לנצח</td><td>ללא תשלום לעד, גם אחרי השקה מסחרית</td></tr>
+  <tr><td>תואר "מייסד"</td><td>פרופיל מיוחד + שם באתר בדף "על הפלטפורמה"</td></tr>
+  <tr><td>גישה מוקדמת לפיצ'רים</td><td>לפני כולם, לפני ההשקה</td></tr>
+  <tr><td>קבוצת ווטסאפ ייעודית</td><td>תקשורת ישירה עם הצוות, השפעה על הפיתוח</td></tr>
+  <tr><td>הזמנה לאירוע השקה</td><td>כינוס מורים-מייסדים בהשקה הרשמית</td></tr>
+</table>
+</div>
+
+<!-- SANDBOX -->
+<div id="sandbox">
+<h3>🟣 שלב 7: הגשה ל-AI Sandbox (שבוע 2-3)</h3>
+<div class="callout callout-success">
+<strong>למה ממשיכים עם זה:</strong> רשות החדשנות מקצה 10M ש"ח לפיילוטים של AI בחינוך. EduTech מתאים בול — כלי AI עברי למורים. מאמץ הגשה נמוך, סיכוי מימון גבוה (200K-500K ש"ח).
+</div>
+<div class="steps">
+<div class="step">
+  <h4>בדוק דדליינים ותנאי סף</h4>
+  <p>לפני הגשה — צריך לוודא שה-Sandbox פתוח ושאנחנו עומדים בקריטריונים.</p>
+  <div class="detail">
+    <strong>מה לבדוק:</strong><br>
+    1. חפש באתר <code>innovationisrael.org.il</code> &rarr; "ארגז חול" / "AI Sandbox"<br>
+    2. מתי הסבב הבא?<br>
+    3. האם צריך ח.פ.? (אם כן — לפתוח עוסק מורשה)<br>
+    4. מה סכום המימון המקסימלי?<br>
+    5. האם יש דרישה לשותפות עם מוסד חינוך?<br><br>
+    <strong>גורמים ליצירת קשר:</strong><br>
+    &bull; רשות החדשנות — מחלקת AI<br>
+    &bull; MindCET — לשיתוף פעולה על הגשה<br>
+    &bull; משרד החינוך — מנהל תחום AI
+  </div>
+  <span class="time">2-3 שעות מחקר</span>
+</div>
+<div class="step">
+  <h4>השלם את טיוטת ההגשה</h4>
+  <p>הטיוטה מוכנה ב-<code>outreach/ai-sandbox-application.md</code>.</p>
+  <div class="detail">
+    <strong>מה להשלים:</strong><br>
+    &bull; תאריך הגשה מדויק<br>
+    &bull; דרישות פורמט (טופס מקוון?)<br>
+    &bull; פרטי ח.פ. / עוסק מורשה<br>
+    &bull; אישור ממוסד חינוך שותף (AMIT/ORT)
+  </div>
+  <span class="time">3-4 שעות</span>
+</div>
+</div>
+</div>
+
+<!-- NEXT TOOLS -->
+<div id="next-tools">
+<h3>🟢 שלב 8: בניית הכלים הבאים (שבוע 2+)</h3>
+<div class="callout callout-info">
+<strong>טיפ:</strong> כל כלי חדש בנוי על אותו stack בדיוק (API route + streaming + system prompt). תגיד ל-Claude Code "תבנה לי מחולל מבחנים" והוא יעשה את זה ב-20-30 דקות.
+</div>
+<div class="steps">
+<div class="step">
+  <h4>מחולל מבחנים (כלי #2)</h4>
+  <p>שאלות ברמות שונות, כולל פורמט בגרות. Use case #2 של מורים.</p>
+  <div class="detail">
+    <strong>קלטים:</strong> מקצוע, נושא, כיתה, סוג שאלות (רב-ברירה / פתוחות / בגרות), מספר שאלות, רמת קושי<br>
+    <strong>פלט:</strong> מבחן מלא מוכן להדפסה + מפתח תשובות
+  </div>
+  <span class="time">Claude Code יבנה ב-~30 דקות</span>
+</div>
+<div class="step">
+  <h4>מדפרנציאטור (כלי #3)</h4>
+  <p>לוקח טקסט ומתאים אותו לרמות קריאה שונות. קריטי לחינוך מיוחד.</p>
+  <div class="detail">
+    <strong>קלטים:</strong> טקסט מקורי + רמות יעד (מתקשים, ממוצע, מצטיינים, חינוך מיוחד)<br>
+    <strong>פלט:</strong> 3-4 גרסאות של אותו טקסט ברמות שונות
+  </div>
+  <span class="time">Claude Code יבנה ב-~20 דקות</span>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- FILES -->
+<div class="section" id="files">
+<h2><span class="icon">📁</span> כל הקבצים</h2>
+
+<h3>קבצי פלטפורמה (חדשים)</h3>
+<table>
+  <tr><th>קובץ</th><th>תיאור</th></tr>
+  <tr><td><code>platform/src/app/page.tsx</code></td><td>דף נחיתה EduTech (Hebrew RTL, Hero, כלים, טופס בטא)</td></tr>
+  <tr><td><code>platform/src/app/tools/lesson-planner/page.tsx</code></td><td>מחולל שיעורים AI (טופס + streaming)</td></tr>
+  <tr><td><code>platform/src/app/api/generate-lesson/route.ts</code></td><td>API route — Claude/Gemini streaming + system prompt פדגוגי</td></tr>
+  <tr><td><code>platform/src/lib/supabase.ts</code></td><td>Supabase client</td></tr>
+  <tr><td><code>platform/.env.local.example</code></td><td>תבנית environment variables</td></tr>
+</table>
+
+<h3>מסמכים עסקיים</h3>
+<table>
+  <tr><th>קובץ</th><th>תיאור</th><th>איך לפתוח</th></tr>
+  <tr><td><code>STRATEGIC-PLAN-2026.md</code></td><td>תוכנית אסטרטגית מלאה</td><td>Markdown viewer</td></tr>
+  <tr><td><code>pitch-deck/edutech-pitch-2026.html</code></td><td>מצגת 12 שקפים</td><td>פתח בדפדפן</td></tr>
+  <tr><td><code>outreach/mindcet-email.md</code></td><td>אימייל מוכן ל-MindCET</td><td>העתק ושלח</td></tr>
+  <tr><td><code>outreach/beta-recruitment-strategy.md</code></td><td>אסטרטגיית גיוס 50 מורים</td><td>Markdown viewer</td></tr>
+  <tr><td><code>outreach/ai-sandbox-application.md</code></td><td>טיוטת הגשה לרשות החדשנות</td><td>Markdown viewer</td></tr>
+  <tr><td><code>RESEARCH.md</code></td><td>מחקר שוק ($1.2B)</td><td>Markdown viewer</td></tr>
+  <tr><td><code>competitive-analysis.md</code></td><td>ניתוח 13 מתחרים + SWOT</td><td>Markdown viewer</td></tr>
+</table>
+</div>
+
+<!-- CHECKLIST -->
+<div class="section">
+<h2><span class="icon">📋</span> צ'קליסט מסכם</h2>
+
+<div class="callout callout-urgent">
+<strong>חשוב:</strong> תעבור שלב אחר שלב מלמעלה. אל תדלג — כל שלב תלוי בקודם.
+</div>
+
+<ul class="checklist">
+  <li>רכישת דומיין <code>edutech.co.il</code> (Cloudflare או Box)</li>
+  <li>הגדרת DNS ב-Cloudflare</li>
+  <li>יצירת פרויקט Supabase + העתקת מפתחות</li>
+  <li>יצירת טבלת <code>beta_signups</code> ב-SQL</li>
+  <li>הוספת מפתח API (Anthropic או Google)</li>
+  <li>בדיקה מקומית — <code>npm run dev</code> &rarr; מחולל שיעורים עובד?</li>
+  <li>פריסה ב-Vercel (Root Directory = <code>platform</code>)</li>
+  <li>חיבור דומיין ל-Vercel + DNS records</li>
+  <li>שליחת אימייל ל-MindCET</li>
+  <li>פרסום פוסט ראשון בקבוצות מורים (Facebook)</li>
+  <li>פוסט LinkedIn אישי</li>
+  <li>שיתוף בווטסאפ עם אנשי קשר</li>
+  <li>מחקר AI Sandbox — דדליינים ותנאי סף</li>
+  <li>בניית כלי #2 (מחולל מבחנים) — בקש מ-Claude Code</li>
+  <li>בניית כלי #3 (מדפרנציאטור) — בקש מ-Claude Code</li>
+</ul>
+</div>
+
+<div style="text-align: center; padding: 40px; color: #64748b; font-size: 0.85em; border-top: 1px solid #334155;">
+  <strong style="color: #94a3b8;">EduTech</strong> — ה-MagicSchool של ישראל<br>
+  מסמך זה נוצר אוטומטית ע"י Claude Code | 10 במרץ 2026<br>
+  <span style="color: #475569;">elad@hiteclearning.co.il</span>
+</div>
+
+</div>
+</body>
+</html>

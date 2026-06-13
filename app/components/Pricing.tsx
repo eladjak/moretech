@@ -10,8 +10,9 @@ export default function Pricing() {
           <span className="text-sm font-bold uppercase tracking-wide text-grass">תמחור</span>
           <h2 className="mt-3 text-3xl font-black text-ink sm:text-4xl">מחירים שקופים, מותאמים לכל היקף</h2>
           <p className="mt-4 text-lg text-muted">
-            מחירי בסיס אמיתיים מהקטלוג שלנו. המחיר הסופי נקבע לפי מספר משתתפים, מרחק ופורמט — ויש
-            הנחות אמיתיות להזמנת סדרה, לפריפריה וללקוחות חוזרים.
+            אלה מחירי בסיס אמיתיים מהקטלוג שלנו — לא מספרים מנופחים. המחיר הסופי נקבע לפי מספר
+            המשתתפים, המרחק והפורמט, ויש הנחות אמיתיות להזמנת סדרה, לפריפריה וללקוחות חוזרים.
+            כל המחירים סופיים, ללא מע&quot;מ.
           </p>
         </Reveal>
 
@@ -20,12 +21,24 @@ export default function Pricing() {
             <Reveal as="article" key={t.category} delay={i * 50}>
               <div className="h-full rounded-2xl border border-brand-100 bg-white p-6">
                 <h3 className="text-base font-extrabold text-ink">{t.category}</h3>
-                <p className="num mt-2 text-2xl font-black text-brand">{t.range}</p>
+                <p className="num mt-2 text-2xl font-black text-brand">
+                  מ-{t.range.split("–")[0]}
+                  <span className="text-sm font-bold text-muted"> · עד {t.range.split("–")[1]}</span>
+                </p>
                 <p className="mt-2 text-sm text-muted">{t.detail}</p>
+                <p className="mt-2 text-xs font-bold text-grass-700">{t.basis}</p>
               </div>
             </Reveal>
           ))}
         </div>
+
+        <Reveal className="mt-6">
+          <p className="rounded-xl border border-brand-100 bg-white/60 px-4 py-3 text-sm text-muted">
+            <span className="font-bold text-ink">איך מתמחרים?</span> רוב הפעילויות מתומחרות לכיתה
+            או לקבוצה — לא לתלמיד. ככה בית ספר יודע מראש כמה זה עולה, בלי הפתעות. לרשת שלמה בונים
+            תכנית רוחבית עם מחיר מותאם. <span className="font-bold text-ink">מותאם לכל בית ספר — לפרטים בשיחה.</span>
+          </p>
+        </Reveal>
 
         {/* Discounts / surcharges */}
         <div className="mt-8 grid gap-4 sm:grid-cols-2">

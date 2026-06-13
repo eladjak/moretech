@@ -1,5 +1,33 @@
 # EduTech - Progress
 
+## 2026-06-13 — REBUILT — premium B2B marketing site + live AI demo (LIVE)
+
+**Status:** SHIPPED. Full rebuild of the EduTech/MoreTech site. Live: https://edutech-inky.vercel.app (HTTP 200, GEO 100/100).
+
+**Architecture decision:** consolidated the two separate apps (`website/` + `platform/`) into ONE Next.js 16 app at repo root (`app/`). The old dirs are kept as historical reference (untouched). bun · TS · Tailwind 4 · Framer Motion · Vercel AI SDK.
+
+**What was built (one premium RTL site):**
+- Hero (motion + Gemini illustration + 3 real cited stats), Problem (real teacher-shortage data w/ sources), Solution (6 service lines), HowItWorks, ForWhom.
+- **Activities Finder** (interactive): 18 ORIGINAL age-banded tech+AI activities, filter by theme/age/format, live count, theme illustrations, "request this" → prefilled contact. `app/data/activities.ts`.
+- **Live AI lesson-planner demo** (`#demo` + `/api/generate-lesson`): free-degradation — Tier-0 deterministic Hebrew template ALWAYS works (no key), Tier-1 streams real AI when GEMINI/ANTHROPIC key present. Verified end-to-end via Playwright.
+- Trust (real workshop photos + networks table + real source links), Pricing (REAL ranges from business-docs catalog + real discount/surcharge mechanics; network packages marked להמחשה), FAQ, Contact, Footer, /about.
+
+**Brand:** EduTech blue #1B4D8E + green #2E9E3F + lime #A4D233 (from real logo). Heebo, RTL.
+**SEO/GEO:** 100/100 (geo-scan). JSON-LD plain-<script> bundle: EducationalOrganization + Service + FAQPage + WebSite. robots/sitemap/llms, OG, canonical, single h1, alt on all imgs.
+**Imagery:** hero + 6 theme icons generated via nano-banana-poster (Gemini, free). No placeholders.
+
+**Decisions pending for Elad (see docs/REBUILD-PLAN-2026-06.md §10):** primary brand (EduTech vs MoreTech), domain (edutech.co.il DNS / subdomain / vercel.app), public pricing display, AI key for demo upgrade.
+
+---
+
+## 2026-05-28 — DORMANT — passive status entry
+
+**Last git commit:** 098f84a 2026-04-19 — docs: correct retrospective — V1 was courses/workshops, not consulting + add agent-autonomous path (date: 2026-04-19)
+**Status:** dormant — no recent work. PROGRESS.md not updated since the last commit. Reactivate by running a session and updating this file.
+
+---
+
+
 ## Status: BUILDING MVP
 ## Last Updated: 2026-03-10
 

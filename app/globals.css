@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/* ============ EduTech brand tokens (from logo: blue book + green circuit-bulb) ============ */
+@theme {
+  --color-brand: #1b4d8e;
+  --color-brand-600: #1b4d8e;
+  --color-brand-700: #15406f;
+  --color-brand-800: #102f53;
+  --color-brand-50: #eef4fb;
+  --color-brand-100: #d7e6f6;
+
+  --color-grass: #2e9e3f;
+  --color-grass-700: #237a31;
+  --color-grass-50: #eaf6ec;
+
+  --color-lime: #a4d233;
+  --color-lime-600: #8bb826;
+
+  --color-ink: #0f1f33;
+  --color-muted: #5b6b7d;
+
+  --font-sans: var(--font-heebo), "Heebo", "Assistant", system-ui, sans-serif;
+
+  --radius-card: 1.25rem;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* tabular numbers everywhere (Hebrew RTL gotcha #3) */
+.num,
+.kpi-value {
+  font-variant-numeric: tabular-nums;
+}
+
+/* RTL direction-aware arrow flip (gotcha #2) */
+.flip-rtl {
+  transform: scaleX(-1);
+}
+
+/* Headlines: balance + comfortable Hebrew line-height */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  line-height: 1.2;
+}
+
+p {
+  text-wrap: pretty;
+  line-height: 1.7;
+}
+
+/* Visible, accessible focus ring */
+:focus-visible {
+  outline: 3px solid var(--color-grass);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Subtle section reveal that respects reduced-motion */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.5s ease-out;
+  will-change: opacity, transform;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Lesson-plan output prose */
+.lesson-output {
+  white-space: pre-wrap;
+  line-height: 1.75;
+}
+.lesson-output strong {
+  color: var(--color-brand);
+}

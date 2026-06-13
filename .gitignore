@@ -1,36 +1,14 @@
-# Dependencies
-node_modules/
-
-# Next.js
-.next/
-out/
-
-# Build
-build/
-dist/
-
-# Environment
-.env*
-
-# OS
+/node_modules
+/.next
+/out
+/build
 .DS_Store
-Thumbs.db
-
-# Debug
-npm-debug.log*
-yarn-debug.log*
 *.pem
+.env*.local
+.vercel
+next-env.d.ts
+/.imgtmp
+/docs/_pricing_clean.txt
+/docs/_pricing_extract.txt
 
-# IDE
-.vscode/
-.idea/
-
-# TypeScript
-*.tsbuildinfo
-
-# Lock files (keep bun.lock)
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-business-docs/
-.claude/
+.vercel

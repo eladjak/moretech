@@ -8,7 +8,7 @@ export default function Pricing() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal className="max-w-3xl">
           <span className="text-sm font-bold uppercase tracking-wide text-grass">תמחור</span>
-          <h2 className="mt-3 text-3xl font-black text-ink sm:text-4xl">מחירים שקופים, מותאמים לכל היקף</h2>
+          <h2 className="title-underline mt-3 inline-block text-3xl font-black text-ink sm:text-4xl">מחירים שקופים, מותאמים לכל היקף</h2>
           <p className="mt-4 text-lg text-muted">
             אלה מחירי בסיס אמיתיים מהקטלוג שלנו — לא מספרים מנופחים. המחיר הסופי נקבע לפי מספר
             המשתתפים, המרחק והפורמט, ויש הנחות אמיתיות להזמנת סדרה, לפריפריה וללקוחות חוזרים.
@@ -19,7 +19,7 @@ export default function Pricing() {
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {priceTiers.map((t, i) => (
             <Reveal as="article" key={t.category} delay={i * 50}>
-              <div className="h-full rounded-2xl border border-brand-100 bg-white p-6">
+              <div className="wow-lift h-full rounded-2xl border border-brand-100 bg-white p-6 transition-shadow hover:shadow-lg">
                 <h3 className="text-base font-extrabold text-ink">{t.category}</h3>
                 <p className="num mt-2 text-2xl font-black text-brand">
                   מ-{t.range.split("–")[0]}
@@ -82,7 +82,7 @@ export default function Pricing() {
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
           {networkPackages.map((p, i) => (
             <Reveal as="article" key={p.name} delay={i * 60}>
-              <div className="h-full rounded-2xl border-2 border-brand bg-white p-6">
+              <div className="wow-lift h-full rounded-2xl border-2 border-brand bg-white p-6 transition-shadow hover:shadow-lg">
                 <div className="flex items-center justify-between">
                   <h4 className="text-lg font-extrabold text-ink">{p.name}</h4>
                   <span className="rounded-full bg-lime/20 px-2 py-0.5 text-[10px] font-bold text-lime-600">להמחשה</span>
@@ -95,7 +95,7 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <a href="#contact" className="mt-5 inline-block text-sm font-bold text-brand underline">
+                <a href="#contact" className="wow-press mt-5 inline-block text-sm font-bold text-brand underline">
                   בקשו הצעה מותאמת לרשת ←
                 </a>
               </div>

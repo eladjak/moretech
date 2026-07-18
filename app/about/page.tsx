@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
-      <Link href="/" className="inline-flex items-center gap-1 text-sm font-semibold text-brand hover:underline">
+      <Link href="/" className="wow-press inline-flex items-center gap-1 text-sm font-semibold text-brand hover:underline">
         <ArrowLeft size={16} className="flip-rtl" /> חזרה לדף הבית
       </Link>
       <h1 className="mt-6 text-4xl font-black text-ink">אודות EduTech</h1>
@@ -38,7 +38,7 @@ export default function About() {
 
       <Link
         href="/#contact"
-        className="mt-10 inline-flex items-center gap-2 rounded-xl bg-brand px-7 py-3.5 text-base font-bold text-white transition-transform hover:scale-[1.03]"
+        className="wow-press mt-10 inline-flex items-center gap-2 rounded-xl bg-brand px-7 py-3.5 text-base font-bold text-white hover:scale-[1.03]"
       >
         קבעו שיחת היכרות
         <ArrowLeft size={18} className="flip-rtl" />

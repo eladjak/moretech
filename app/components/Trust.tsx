@@ -14,7 +14,7 @@ export default function Trust() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal className="max-w-3xl">
           <span className="text-sm font-bold uppercase tracking-wide text-grass">ניסיון בשטח</span>
-          <h2 className="mt-3 text-3xl font-black text-ink sm:text-4xl">
+          <h2 className="title-underline mt-3 inline-block text-3xl font-black text-ink sm:text-4xl">
             לא תיאוריה — סדנאות אמיתיות, מורים אמיתיים, תוצרים אמיתיים
           </h2>
           <p className="mt-4 text-lg text-muted">
@@ -26,7 +26,7 @@ export default function Trust() {
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           {photos.map((p, i) => (
             <Reveal key={p.src} delay={i * 60}>
-              <div className="overflow-hidden rounded-2xl border border-brand-100">
+              <div className="wow-lift overflow-hidden rounded-2xl border border-brand-100 transition-shadow hover:shadow-lg">
                 <Image
                   src={p.src}
                   alt={p.alt}
@@ -81,7 +81,7 @@ export default function Trust() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-brand underline decoration-brand-100 underline-offset-2 hover:decoration-brand"
+                  className="wow-press text-sm text-brand underline decoration-brand-100 underline-offset-2 hover:decoration-brand"
                 >
                   {s.label}
                 </a>

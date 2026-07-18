@@ -41,7 +41,7 @@ export default function Header() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-ink/80 transition-colors hover:bg-brand-50 hover:text-brand"
+                className="wow-press rounded-lg px-3 py-2 text-sm font-medium text-ink/80 hover:bg-brand-50 hover:text-brand"
               >
                 {l.label}
               </a>
@@ -50,7 +50,7 @@ export default function Header() {
           <li>
             <a
               href="#contact"
-              className="mr-1 rounded-lg bg-brand px-4 py-2 text-sm font-bold text-white transition-transform hover:scale-[1.03]"
+              className="wow-press mr-1 rounded-lg bg-brand px-4 py-2 text-sm font-bold text-white hover:scale-[1.03]"
             >
               קבעו שיחה
             </a>
@@ -59,7 +59,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="rounded-lg p-2 text-brand md:hidden"
+          className="wow-press rounded-lg p-2 text-brand md:hidden"
           aria-label={open ? "סגירת תפריט" : "פתיחת תפריט"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -76,7 +76,7 @@ export default function Header() {
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-lg px-3 py-2.5 text-base font-medium text-ink/80 hover:bg-brand-50"
+                  className="wow-press block rounded-lg px-3 py-2.5 text-base font-medium text-ink/80 hover:bg-brand-50"
                 >
                   {l.label}
                 </a>
@@ -86,7 +86,7 @@ export default function Header() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="mt-1 block rounded-lg bg-brand px-3 py-2.5 text-center text-base font-bold text-white"
+                className="wow-press mt-1 block rounded-lg bg-brand px-3 py-2.5 text-center text-base font-bold text-white"
               >
                 קבעו שיחה
               </a>

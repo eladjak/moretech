@@ -33,7 +33,7 @@ function Chip({
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`rounded-full px-3.5 py-1.5 text-sm font-semibold transition-colors ${
+      className={`wow-press rounded-full px-3.5 py-1.5 text-sm font-semibold ${
         active
           ? "bg-brand text-white"
           : "border border-brand-100 bg-white text-ink/70 hover:border-brand hover:text-brand"
@@ -69,7 +69,7 @@ export default function ActivitiesFinder() {
             בחרו פעילות לבית הספר — לפי גיל, נושא ופורמט
           </h2>
           <p className="mt-4 text-lg text-muted">
-            {activities.length} תכניות מקוריות בטכנולוגיה וב-AI, מותאמות לכל שכבת גיל. סננו, גלו, ובחרו
+            <span className="num" data-countup>{activities.length}</span> תכניות מקוריות בטכנולוגיה וב-AI, מותאמות לכל שכבת גיל. סננו, גלו, ובחרו
             את מה שמתאים לכם — ואנחנו נבנה את זה אצלכם.
           </p>
         </div>
@@ -125,7 +125,7 @@ export default function ActivitiesFinder() {
         ) : (
           <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((a) => (
-              <li key={a.id} className="flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white transition-shadow hover:shadow-lg">
+              <li key={a.id} className="wow-lift flex flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white transition-shadow hover:shadow-lg">
                 <div className="flex items-center gap-3 border-b border-brand-50 bg-brand-50/40 p-4">
                   <Image
                     src={themeMeta[a.theme].img}
@@ -172,7 +172,7 @@ export default function ActivitiesFinder() {
                     )}
                     <a
                       href={`#contact?activity=${encodeURIComponent(a.name)}`}
-                      className="inline-flex items-center gap-1 rounded-lg bg-brand px-3 py-1.5 text-sm font-bold text-white transition-transform hover:scale-[1.03]"
+                      className="wow-press inline-flex items-center gap-1 rounded-lg bg-brand px-3 py-1.5 text-sm font-bold text-white hover:scale-[1.03]"
                       onClick={() => {
                         try {
                           sessionStorage.setItem("edutech_activity", a.name);

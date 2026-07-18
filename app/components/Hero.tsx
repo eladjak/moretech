@@ -32,14 +32,14 @@ export default function Hero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-7 py-3.5 text-base font-bold text-white transition-transform hover:scale-[1.03]"
+              className="wow-press inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-7 py-3.5 text-base font-bold text-white hover:scale-[1.03]"
             >
               קבעו שיחת היכרות
               <ArrowLeft size={18} className="flip-rtl" />
             </a>
             <a
               href="#demo"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-brand-100 bg-white px-7 py-3.5 text-base font-bold text-brand transition-colors hover:border-brand hover:bg-brand-50"
+              className="wow-press inline-flex items-center justify-center gap-2 rounded-xl border-2 border-brand-100 bg-white px-7 py-3.5 text-base font-bold text-brand hover:border-brand hover:bg-brand-50"
             >
               <PlayCircle size={18} />
               נסו את מחולל השיעורים
@@ -49,7 +49,7 @@ export default function Hero() {
           <dl className="mt-10 grid grid-cols-3 gap-3">
             {heroStats.map((s) => (
               <div key={s.label} className="rounded-xl border border-brand-100 bg-white p-3 text-center">
-                <dt className="kpi-value text-xl font-black text-brand sm:text-2xl">{s.value}</dt>
+                <dt className="kpi-value text-xl font-black text-brand sm:text-2xl" data-countup>{s.value}</dt>
                 <dd className="mt-1 text-[11px] leading-tight text-muted sm:text-xs">{s.label}</dd>
               </div>
             ))}

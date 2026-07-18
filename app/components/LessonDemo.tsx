@@ -191,7 +191,7 @@ export default function LessonDemo() {
             <button
               type="submit"
               disabled={loading}
-              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-base font-bold text-white transition-transform hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70"
+              className="wow-press mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-base font-bold text-white hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70"
             >
               {loading ? (
                 <>
@@ -215,7 +215,7 @@ export default function LessonDemo() {
                     <button
                       type="button"
                       onClick={copy}
-                      className="inline-flex items-center gap-1 rounded-lg border border-brand-100 px-2.5 py-1.5 text-xs font-semibold text-brand hover:bg-brand-50"
+                      className="wow-press inline-flex items-center gap-1 rounded-lg border border-brand-100 px-2.5 py-1.5 text-xs font-semibold text-brand hover:bg-brand-50"
                     >
                       {copied ? <><Check size={13} /> הועתק</> : <><Copy size={13} /> העתקה</>}
                     </button>
@@ -223,7 +223,7 @@ export default function LessonDemo() {
                       type="button"
                       onClick={reset}
                       aria-label="ניקוי"
-                      className="inline-flex items-center gap-1 rounded-lg border border-brand-100 px-2.5 py-1.5 text-xs font-semibold text-muted hover:bg-brand-50"
+                      className="wow-press inline-flex items-center gap-1 rounded-lg border border-brand-100 px-2.5 py-1.5 text-xs font-semibold text-muted hover:bg-brand-50"
                     >
                       <RotateCcw size={13} /> חדש
                     </button>

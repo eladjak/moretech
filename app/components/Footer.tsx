@@ -28,21 +28,21 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-extrabold text-ink">ניווט</h3>
             <ul className="mt-3 space-y-2 text-sm">
-              <li><a href="#problem" className="text-muted hover:text-brand">האתגר</a></li>
-              <li><a href="#solution" className="text-muted hover:text-brand">מה אנחנו עושים</a></li>
-              <li><a href="#activities" className="text-muted hover:text-brand">קטלוג פעילויות</a></li>
-              <li><a href="#demo" className="text-muted hover:text-brand">דמו AI</a></li>
-              <li><a href="#pricing" className="text-muted hover:text-brand">תמחור</a></li>
-              <li><a href="/about" className="text-muted hover:text-brand">אודות EduTech</a></li>
+              <li><a href="#problem" className="wow-press inline-block text-muted hover:text-brand">האתגר</a></li>
+              <li><a href="#solution" className="wow-press inline-block text-muted hover:text-brand">מה אנחנו עושים</a></li>
+              <li><a href="#activities" className="wow-press inline-block text-muted hover:text-brand">קטלוג פעילויות</a></li>
+              <li><a href="#demo" className="wow-press inline-block text-muted hover:text-brand">דמו AI</a></li>
+              <li><a href="#pricing" className="wow-press inline-block text-muted hover:text-brand">תמחור</a></li>
+              <li><a href="/about" className="wow-press inline-block text-muted hover:text-brand">אודות EduTech</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-sm font-extrabold text-ink">יצירת קשר</h3>
             <ul className="mt-3 space-y-2 text-sm text-muted">
-              <li><a href={`mailto:${SITE.email}`} className="hover:text-brand" dir="ltr">{SITE.email}</a></li>
+              <li><a href={`mailto:${SITE.email}`} className="wow-press inline-block hover:text-brand" dir="ltr">{SITE.email}</a></li>
               <li>ישראל</li>
-              <li><a href="#contact" className="font-bold text-brand hover:underline">קבעו שיחה ←</a></li>
+              <li><a href="#contact" className="wow-press inline-block font-bold text-brand hover:underline">קבעו שיחה ←</a></li>
             </ul>
           </div>
         </div>

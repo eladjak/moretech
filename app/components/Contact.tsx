@@ -51,7 +51,7 @@ export default function Contact() {
             </p>
           )}
           <div className="mt-8 space-y-3 text-white/80">
-            <a href={`mailto:${SITE.email}`} className="flex items-center gap-3 hover:text-lime">
+            <a href={`mailto:${SITE.email}`} className="wow-press inline-flex items-center gap-3 hover:text-lime">
               <Mail size={18} /> {SITE.email}
             </a>
             <p className="flex items-center gap-3 text-white/60">
@@ -89,7 +89,7 @@ export default function Contact() {
               className="w-full rounded-lg border border-brand-100 px-3 py-2.5 text-sm" />
           </label>
           <button type="submit"
-            className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-base font-bold text-white transition-transform hover:scale-[1.02]">
+            className="wow-press mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-base font-bold text-white hover:scale-[1.02]">
             {sent ? <><Check size={18} /> נפתח חלון המייל</> : <><Send size={18} className="flip-rtl" /> שליחת פנייה</>}
           </button>
           <p className="mt-3 text-center text-xs text-muted">הפנייה נפתחת בתוכנת המייל שלכם ונשלחת ל-{SITE.email}</p>

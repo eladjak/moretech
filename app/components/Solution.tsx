@@ -7,7 +7,7 @@ export default function Solution() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal className="max-w-3xl">
           <span className="text-sm font-bold uppercase tracking-wide text-grass">הפתרון</span>
-          <h2 className="mt-3 text-3xl font-black text-ink sm:text-4xl">
+          <h2 className="title-underline mt-3 inline-block text-3xl font-black text-ink sm:text-4xl">
             פתרון אחד שלם — מהרצאה בודדת ועד תכנית רשת
           </h2>
           <p className="mt-4 text-lg text-muted">
@@ -21,7 +21,7 @@ export default function Solution() {
             const Icon = o.icon;
             return (
               <Reveal as="article" key={o.title} delay={i * 60}>
-                <div className="group h-full rounded-2xl border border-brand-100 bg-white p-6 transition-shadow hover:shadow-lg">
+                <div className="wow-lift group h-full rounded-2xl border border-brand-100 bg-white p-6 transition-shadow hover:shadow-lg">
                   <span className="inline-flex size-12 items-center justify-center rounded-xl bg-brand-50 text-brand transition-colors group-hover:bg-brand group-hover:text-white">
                     <Icon size={24} />
                   </span>

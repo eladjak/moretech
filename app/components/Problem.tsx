@@ -8,7 +8,7 @@ export default function Problem() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal className="max-w-3xl">
           <span className="text-sm font-bold uppercase tracking-wide text-lime">האתגר</span>
-          <h2 className="mt-3 text-3xl font-black sm:text-4xl">
+          <h2 className="title-underline mt-3 inline-block text-3xl font-black sm:text-4xl">
             ישראל מצהירה על &quot;שנת הבינה המלאכותית&quot; — אבל אין מספיק מורים שיודעים ללמד אותה
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-white/80">
@@ -21,13 +21,13 @@ export default function Problem() {
           {problemStats.map((s, i) => (
             <Reveal as="article" key={s.label} delay={i * 80}>
               <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-6">
-                <div className="kpi-value text-4xl font-black text-lime">{s.value}</div>
+                <div className="kpi-value text-4xl font-black text-lime" data-countup>{s.value}</div>
                 <p className="mt-3 text-sm leading-relaxed text-white/85">{s.label}</p>
                 <a
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-white/60 hover:text-lime"
+                  className="wow-press mt-4 inline-flex items-center gap-1 text-xs font-semibold text-white/60 hover:text-lime"
                 >
                   מקור: {s.source}
                   <ExternalLink size={12} />

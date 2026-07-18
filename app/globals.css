@@ -77,24 +77,120 @@ p {
   border-radius: 4px;
 }
 
-/* Subtle section reveal that respects reduced-motion */
+/* ============ wow-ui: bidirectional scroll reveal ============
+   Server HTML ships VISIBLE (.reveal is NOT hidden on its own). The
+   hidden state is applied at runtime only after the element is armed
+   (.reveal.armed) — so no-JS users and crawlers see everything, and a
+   tall mobile section is never stuck invisible. Motion is transform +
+   opacity only. */
 .reveal {
-  opacity: 0;
-  transform: translateY(16px);
   transition:
     opacity 0.5s ease-out,
-    transform 0.5s ease-out;
-  will-change: opacity, transform;
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.reveal.in {
+.reveal.armed {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.reveal.armed.in {
   opacity: 1;
   transform: none;
 }
+/* Left through the top -> fade upward (bidirectional choreography). */
+.reveal.armed.out-up {
+  opacity: 0;
+  transform: translateY(-14px);
+}
+
+/* ============ wow-ui: section-title underline draw (restrained) ============
+   scaleX draw, origin at the inline-start edge (right in RTL). Only the
+   accent underline animates; the heading text is never touched. */
+.title-underline {
+  position: relative;
+}
+.title-underline::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: -0.35rem;
+  block-size: 3px;
+  inline-size: 2.75rem;
+  border-radius: 999px;
+  background: var(--color-grass);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.in .title-underline::after,
+.title-underline.in::after {
+  transform: scaleX(1);
+}
+
+/* ============ wow-ui: interactive press feedback (triple state) ============
+   Adds the missing `active` press to interactive elements. Hover lift is
+   gated behind hover-capable pointers so touch never "locks" on hover.
+   focus-visible mirrors hover for keyboard users. transform-only, <=200ms. */
+.wow-press {
+  transition:
+    transform 0.16s ease-out,
+    box-shadow 0.16s ease-out,
+    border-color 0.16s ease-out,
+    background-color 0.16s ease-out,
+    color 0.16s ease-out;
+}
+.wow-press:active {
+  transform: scale(0.97);
+}
+@media (hover: hover) {
+  .wow-lift:hover {
+    transform: translateY(-3px);
+  }
+}
+.wow-lift:focus-visible {
+  transform: translateY(-3px);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
+  /* reduced-motion belt — reset EVERY wow selector to its visible final state */
+  .reveal,
+  .reveal.armed,
+  .reveal.armed.in,
+  .reveal.armed.out-up {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+  .title-underline::after {
+    transform: scaleX(1);
+    transition: none;
+  }
+  .wow-press,
+  .wow-lift {
+    transition: none;
+  }
+  .wow-press:active,
+  .wow-lift:hover,
+  .wow-lift:focus-visible {
+    transform: none;
+  }
+}
+
+/* ============ wow-ui: cross-page View Transitions (CSS-only, MPA) ============
+   Snappy root crossfade between / and /about. Progressive enhancement —
+   unsupported browsers just navigate normally, zero JS. */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.25s;
+  animation-timing-function: ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
   }
 }
 

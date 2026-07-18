@@ -9,10 +9,12 @@ import Pricing from "./components/Pricing";
 import Faq from "./components/Faq";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import CountUp from "./components/CountUp";
 
 export default function Home() {
   return (
     <>
+      <CountUp />
       <Header />
       <main>
         <Hero />

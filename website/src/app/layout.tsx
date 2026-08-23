@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Heebo } from "next/font/google";
 import "./globals.css";
+import { MotionProvider } from "@/components/MotionProvider";
 
 const heebo = Heebo({
   subsets: ["latin", "hebrew"],
@@ -38,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="he" dir="rtl">
       <body className={`${heebo.variable} font-sans antialiased`}>
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

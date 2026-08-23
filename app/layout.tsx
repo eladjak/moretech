@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Heebo } from "next/font/google";
 import "./globals.css";
+import { MotionProvider } from "./components/MotionProvider";
 import JsonLd from "./components/JsonLd";
 import { SITE } from "./lib/utils";
 
@@ -61,7 +62,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <JsonLd />
       </head>
-      <body>{children}</body>
+      <body>
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }

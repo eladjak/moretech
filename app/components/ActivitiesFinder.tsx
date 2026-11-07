@@ -171,12 +171,13 @@ export default function ActivitiesFinder() {
                       <span className="text-sm text-muted">בהתאמה</span>
                     )}
                     <a
-                      href={`#contact?activity=${encodeURIComponent(a.name)}`}
+                      href="#contact"
                       className="wow-press inline-flex items-center gap-1 rounded-lg bg-brand px-3 py-1.5 text-sm font-bold text-white hover:scale-[1.03]"
                       onClick={() => {
                         try {
                           sessionStorage.setItem("edutech_activity", a.name);
                         } catch {}
+                        window.dispatchEvent(new CustomEvent("edutech:activity", { detail: a.name }));
                       }}
                     >
                       בקשו פעילות זו

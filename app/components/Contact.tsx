@@ -1,22 +1,30 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Mail, Phone, Send, Check } from "lucide-react";
 import { SITE } from "@/lib/utils";
 
 export default function Contact() {
   const [activity, setActivity] = useState("");
   const [sent, setSent] = useState(false);
+  const generatedMessage = useRef("");
   const [form, setForm] = useState({ name: "", org: "", email: "", phone: "", message: "" });
 
   useEffect(() => {
+    const selectActivity = (a: string) => {
+      setActivity(a);
+      const previous = generatedMessage.current;
+      const next = `אשמח לשמוע על הפעילות: ${a}`;
+      generatedMessage.current = next;
+      setForm((f) => ({ ...f, message: !f.message || f.message === previous ? next : f.message }));
+    };
+    const onActivity = (event: Event) => selectActivity((event as CustomEvent<string>).detail);
+    window.addEventListener("edutech:activity", onActivity);
     try {
       const a = sessionStorage.getItem("edutech_activity");
-      if (a) {
-        setActivity(a);
-        setForm((f) => ({ ...f, message: `אשמח לשמוע על הפעילות: ${a}` }));
-      }
+      if (a) selectActivity(a);
     } catch {}
+    return () => window.removeEventListener("edutech:activity", onActivity);
   }, []);
 
   function submit(e: React.FormEvent) {
